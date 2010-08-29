@@ -8,11 +8,14 @@ This version of Mover Mini has the following known issues which will be _resolve
 
  * **THIS LIBRARY IS NOT READY FOR PRODUCTION.** It includes an expiration date of **October 1st, 2010**. Do not deploy apps that include this library to end users.
 
+ * **Only iOS 4.0 and later is supported.** Do not add this library to an application that may run on iOS 3.x; both the base SDK and deployment target setting must be 4.0 or later.
+
  * **Running on iPad is unsupported**. The application will crash on iPad. Do not attempt to deploy apps that include this library on iPad hardware.
 
  * **Only the portrait orientation is supported**. Showing the Mover table while the app has any part of its UI in landscape orientation, or changing the orientation while the Mover table is showing, will produce undefined behavior.
 
 This version of Mover Mini has the following important notes:
+
  * The default animation style for the table (`Shift`) will manipulate views in your window to produce a "push up" effect. If you use this animation style, you must not modify the origin, add, or remove any direct subview of the window while the Mover table is displayed in it. If you need to modify the origin of, or remove, direct subviews of the window, you can use the alternative `Cover` animation style, which does not modify those views' origins.
 
  * Adding subviews to a window while the Mover table is displayed in it will not be supported.
