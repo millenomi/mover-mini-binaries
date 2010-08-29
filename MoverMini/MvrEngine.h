@@ -95,7 +95,7 @@ extern NSString* const kMvrEngineOutgoingKey;
 	
 	NSMutableSet* knownItemsSet;
 	
-	BOOL registeredForShutdown;
+	BOOL registeredForShutdown, hasStoppedAfterEnteringBackground;
 	
 	NSSet* allowedItemTypes;
 	L0Map* incomingsBeingChecked;
