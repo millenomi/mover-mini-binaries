@@ -12,6 +12,14 @@
 @protocol MvrEndpoint;
 
 /**
+ Checks whether Mover Mini is currently available; it returns YES if it is, or NO if it is not.
+ 
+ If this function returns NO, no Mover Mini function, method, constant or class is safe for use. Call this function before using any of the above. Caching the result of this function call is allowed (that is, the value will not change during the lifetime of the application).
+ */
+extern BOOL MvrMiniIsAvailable();
+
+
+/**
  This notification is posted whenever the engine stops (as per the MvrEngine#stop method).
  */
 extern NSString* const kMvrEngineWillStopNotification;

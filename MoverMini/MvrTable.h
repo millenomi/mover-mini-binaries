@@ -11,7 +11,7 @@
 @class MvrMiniItem, L0KVODispatcher, MvrSlide, MvrEngine;
 
 /**
- This type defines the possible animation types for a MvrTable. See the MvrTable#animationKind property for more information.
+ This type defines the possible animation types for a MvrTable. See the MvrTable#animationStyle property for more information.
  */
 typedef enum {
 	/** This animation style will cause the Mover table to appear from a side of the screen and push the contents of the window aside. (The contents of the window will be partially visible near the table.)
@@ -26,7 +26,7 @@ typedef enum {
 	
 	/** This animation style will cause the Mover table to appear as a view above all other views in the attached window. (The contents of the window will be partially visible above the table.)
 	 
-	 Unlike @ref kMvrTableAnimationShiftUp, this animation style will not modify the origin of other views in the same window. */
+	 Unlike @ref kMvrTableAnimationShift, this animation style will not modify the origin of other views in the same window. */
 	kMvrTableAnimationCover = 1,
 } MvrTableAnimationStyle;
 
@@ -58,9 +58,9 @@ typedef enum {
 @property(readonly, assign) UIWindow* window;
 
 /**
- Sets the animation kind that will be used when the table is shown or hidden. See the @ref MvrTableAnimationKind type for available animation kinds. The default animation style is @ref kMvrTableAnimationShiftUp.
+ Sets the animation style that will be used when the table is shown or hidden. See the @ref MvrTableAnimationStyle type for available animation styles. The default animation style is @ref kMvrTableAnimationShift.
  
- You can only set the kind when the table is not shown onscreen. Setting the property while the table is onscreen can cause arbitrary behavior to happen.
+ You can only set the style when the table is not shown onscreen. Setting the property while the table is onscreen produces undefined behavior.
  */
 @property(assign, nonatomic) MvrTableAnimationStyle animationStyle;
 
