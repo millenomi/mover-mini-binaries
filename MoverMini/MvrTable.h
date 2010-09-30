@@ -16,9 +16,11 @@
 typedef enum {
 	/** This animation style will cause the Mover table to appear from a side of the screen and push the contents of the window aside. (The contents of the window will be partially visible near the table.)
 	 
-	 In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views app.
+	 In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views up.
 	 
 	 Running the animation will cause the origins of all views in the window to be changed as part of the animation, and changed back as the animation undoes itself on hiding.
+	 
+	 This animation style cannot be undone cleanly if the orientation changes. It is the app's responsibility to prevent orientation changes while the table is showing with this animation style. If this cannot be avoided, you can use the Cover animation style instead.
 	 
 	 This is the default animation style.
 	 */
@@ -29,6 +31,13 @@ typedef enum {
 	 Unlike @ref kMvrTableAnimationShift, this animation style will not modify the origin of other views in the same window. */
 	kMvrTableAnimationCover = 1,
 } MvrTableAnimationStyle;
+
+/**
+ This notification is sent whenever screen configuration has changed in a way that could prevent, or allow, showing the Mover table.
+ 
+ At the time this notification is posted, a few things may happen. The most important is that the table, if showing, may be hidden. However, this is only possible with the Cover animation style. If you're using the Shift animation style and this notification is posted, an exception will be raised.
+ */
+extern NSString* const kMvrTableDidChangeCanShowNotification;
 
 @protocol MvrTableDelegate;
 
@@ -46,6 +55,20 @@ typedef enum {
 	NSMutableArray* barButtonItems;
 	NSMutableArray* itemActions;
 }
+
+/**
+ Returns YES if this is a supported configuration. Mover Mini only supports certain configurations. If the configuration is unsupported, you will not be able to produce or access MvrEngine and MvrTable instances (relevant access methods will return nil).
+ 
+ Currently Mover Mini 1.0 is only supported on iPhone and iPod touch on iOS 4.0 and later.
+ */
++ (BOOL) canUseMoverTable;
+
+/**
+ Returns YES if the table can be displayed in this configuration, or NO otherwise. Calling #show and #showByAddingItem: will only succeed in showing the table if this property returns YES.
+ 
+ The MvrTable objects sends a kMvrTableDidChangeCanShowNotification whenever the value of this property has potentially changed.
+ */
+@property(readonly) BOOL canShowTable;
 
 /**
  Creates a table attached to the given window. It will be displayed therein.
@@ -80,6 +103,8 @@ typedef enum {
  Adds an item to the table and displays it entering. If the table was already displayed, the item will be animated entering from the top edge of it. If the table was not displayed, the item will be animated entering as the table shows itself.
  
  This method adds the item to the known items set managed by @ref MvrEngine.
+ 
+ Sometimes, the table may not be displayed (in which case #canShowTable returns NO). Calling this method in those situations will not show the table, but will still add the item.
  */
 - (void) showByAddingItem:(MvrMiniItem*) item;
 

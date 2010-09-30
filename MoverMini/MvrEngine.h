@@ -110,7 +110,7 @@ extern NSString* const kMvrEngineOutgoingKey;
 /** Returns a reference to the Mover Mini resources bundle. */
 + (NSBundle*) moverMiniResourcesBundle;
 
-/** Returns the default engine instance. */
+/** Returns the default engine instance. This method may return nil if the engine is unavailable in the current configuration (see MvrTable#canUseMoverTable for more information). */
 + (MvrEngine*) defaultEngine;
 
 /**

@@ -2,17 +2,36 @@
 
 This is a pre-alpha version of the Mover Mini library. This library allows you to add some of the features of the [Mover application](http://infinite-labs.net/mover/) to your own app, allowing it to share and receive from other devices at the swipe of a finger.
 
-## READ ME FIRST: Known issues.
+Following this section are update news. Look below them for a quick start on the use of this library.
 
-This version of Mover Mini has the following known issues which will be _resolved in future releases_:
+# Update: Sep 30th, 2010
 
- * **THIS LIBRARY IS NOT READY FOR PRODUCTION.** It includes an expiration date of **October 1st, 2010**. Do not deploy apps that include this library to end users.
+## The TL;DR
 
- * **Only iOS 4.0 and later is supported.** Do not add this library to an application that may run on iOS 3.x; both the base SDK and deployment target setting must be 4.0 or later.
+This update resolves some known issues and extends expiration to October 15th, 2010.
 
- * **Running on iPad is unsupported**. The application will crash on iPad. Do not attempt to deploy apps that include this library on iPad hardware.
+You can now use this library in apps that run on iPad. It will not work (constructor methods return `nil`), but it will no longer raise exceptions.
 
- * **Only the portrait orientation is supported**. Showing the Mover table while the app has any part of its UI in landscape orientation, or changing the orientation while the Mover table is showing, will produce undefined behavior.
+You can now use this library in apps that go landscape. Change the animation style of the table to `Cover` if the app may go landscape while the table is onscreen.
+
+## The long version
+
+You can now deploy this library in iPad applications and the library can behave correctly when the orientation changes, provided certain steps are taken.
+
+* It is no longer necessary to check for the idiom before trying to create `MvrTable` and `MvrEngine` objects. Any attempt to access or create instances of these objects will return `nil` instead if the environment cannot support Mover Mini (for example, on iPad). You can check whether creating instances will work by invoking the `[MvrTable canUseMoverTable]` class function.
+
+* The `Cover` animation style now supports orientation changes. Rotating the device will cause the `Cover` table to hide. The `Slide` animation style, which is the default, cannot recover correctly from an orientation change and will throw an exception instead if forced into an unrecoverable situation.
+
+	The `Slide` animation is more aesthetically pleasant, all in all, and thus remains the default. If you use it you must guarantee that the application will never change its orientation while the table is onscreen. If you cannot guarantee it, you can use the `Cover` style instead now. (The table is only displayable in a portrait orientation, so landscape-only apps are not supported for now.)
+
+* The `canShowTable` property has been added. If the orientation is not right, it will return `NO` and the `show` and `showByAddingItem:` methods will not display the table (although the item will still be added, if given). The table now posts `kMvrTableDidChangeCanShowNotification` to the default notification center when the value of this property has potentially changed. (It may also hide the table at this time, as above.)
+
+The following known issues have changed, but remain:
+
+* **THIS LIBRARY IS NOT READY FOR PRODUCTION.** It will raise an exception if used past its expiration date of **October 15th, 2010**. Do not deploy apps that include this library to end users.
+
+* **Only iOS 4.0 and later is supported.** Do not add this library to an application that may run on iOS 3.x; both the base SDK and deployment target setting must be 4.0 or later. (This library has been built against the 4.1 base SDK.)
+
 
 This version of Mover Mini has the following important notes:
 
@@ -121,3 +140,11 @@ For example, to set only PNG and JPEG images as allowed, do:
 	table.engine.allowedItemTypes = [NSSet setWithObjects:(id) kUTTypePNG, (id) kUTTypeJPEG, nil];
 	
 This will silently ignore all other kinds of items. Reminder: you need to set this before the engine starts!
+
+### How to Show Icons on the Table
+
+To specify how stuff looks like on the table, you need to register an "item displayer". There's one built-in for UIKit-decodable images; just run this line before you create the table:
+
+	[MvrMiniImageDisplayer addDisplayer];
+	
+You can make displayers for your own items by making a `MvrMiniItemDisplayer` subclass, overriding the right methods (see the docs!), then calling `+addDisplayer` on it before you create your table the first time.

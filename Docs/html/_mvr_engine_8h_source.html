@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrEngine.h Source File</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrEngine.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -41,7 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-<h1>/Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrEngine.h</h1><a href="_mvr_engine_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrEngine.h</h1><a href="_mvr_engine_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  MvrEngine.h</span>
 <a name="l00003"></a>00003 <span class="comment">//  MoverMini</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -87,58 +87,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00085"></a>00085 <span class="keyword">@class</span> MvrModernWiFi, MvrScannerObserver, <a class="code" href="interface_mvr_mini_item.html" title="An item represents a block of data and metadata that can be transferred by the Mover...">MvrMiniItem</a>, L0UUID;
 <a name="l00086"></a>00086 
 <a name="l00091"></a><a class="code" href="interface_mvr_engine.html">00091</a> <span class="keyword">@interface </span><a class="code" href="interface_mvr_engine.html" title="The engine coordinates Mover Mini activities, runs the Core so that discovery and...">MvrEngine</a> : NSObject {
-<a name="l00092"></a><a class="code" href="interface_mvr_engine.html#a5e2a2f0aca8a9e007c16860825afcdf7">00092</a>         MvrModernWiFi* <a class="code" href="interface_mvr_engine.html#a5e2a2f0aca8a9e007c16860825afcdf7">wifi</a>;
-<a name="l00093"></a><a class="code" href="interface_mvr_engine.html#a82c7ac6f9bcd29d6114836b3029e5487">00093</a>         MvrScannerObserver* <a class="code" href="interface_mvr_engine.html#a82c7ac6f9bcd29d6114836b3029e5487">observer</a>;
-<a name="l00094"></a><a class="code" href="interface_mvr_engine.html#a5c1383a66747d8206727852f41413a97">00094</a>         L0UUID* <a class="code" href="interface_mvr_engine.html#a5c1383a66747d8206727852f41413a97">identifier</a>;
-<a name="l00095"></a>00095         
-<a name="l00096"></a><a class="code" href="interface_mvr_engine.html#a5520d0a04f78dc72e4c4a38a5e5cafc0">00096</a>         NSMutableSet* <a class="code" href="interface_mvr_engine.html#a5520d0a04f78dc72e4c4a38a5e5cafc0">knownItemsSet</a>;
-<a name="l00097"></a>00097         
-<a name="l00098"></a><a class="code" href="interface_mvr_engine.html#aae09a999cecf334a717926c8e2f17d66">00098</a>         BOOL <a class="code" href="interface_mvr_engine.html#aae09a999cecf334a717926c8e2f17d66">registeredForShutdown</a>;
-<a name="l00099"></a>00099         
-<a name="l00100"></a><a class="code" href="interface_mvr_engine.html#a3f903ce7558ab355b39a2a1e68035841">00100</a>         NSSet* <a class="code" href="interface_mvr_engine.html#a3f903ce7558ab355b39a2a1e68035841" title="Sets and retrieves the allowed item types for this engine.">allowedItemTypes</a>;
-<a name="l00101"></a><a class="code" href="interface_mvr_engine.html#a6888929b591fdd01a730008833bf2703">00101</a>         L0Map* <a class="code" href="interface_mvr_engine.html#a6888929b591fdd01a730008833bf2703">incomingsBeingChecked</a>;
-<a name="l00102"></a><a class="code" href="interface_mvr_engine.html#a59b12fe2b78ec14006def3bdaf2980c1">00102</a>         NSMutableSet* <a class="code" href="interface_mvr_engine.html#a59b12fe2b78ec14006def3bdaf2980c1">incomingsNotYetChecked</a>;
-<a name="l00103"></a>00103         
-<a name="l00104"></a><a class="code" href="interface_mvr_engine.html#a49a9ec949cf3db32913d2d8e079be73e">00104</a>         NSUInteger <a class="code" href="interface_mvr_engine.html#a49a9ec949cf3db32913d2d8e079be73e">retainCountForKnownItems</a>;
-<a name="l00105"></a><a class="code" href="interface_mvr_engine.html#ac9c7c66350a39c53026139f771f5326c">00105</a>         BOOL <a class="code" href="interface_mvr_engine.html#ac9c7c66350a39c53026139f771f5326c">isAnythingGoingOn</a>;
-<a name="l00106"></a>00106         
-<a name="l00107"></a><a class="code" href="interface_mvr_engine.html#af5f04ede5d0e5bf3524d383b4f9ffd13">00107</a>         NSMutableSet* <a class="code" href="interface_mvr_engine.html#af5f04ede5d0e5bf3524d383b4f9ffd13">miniItemsBeingSent</a>;
-<a name="l00108"></a>00108 }
-<a name="l00109"></a>00109 
-<a name="l00111"></a>00111 + (NSBundle*) moverMiniResourcesBundle;
-<a name="l00112"></a>00112 
-<a name="l00114"></a>00114 + (<a class="code" href="interface_mvr_engine.html" title="The engine coordinates Mover Mini activities, runs the Core so that discovery and...">MvrEngine</a>*) defaultEngine;
-<a name="l00115"></a>00115 
-<a name="l00121"></a>00121 - (<a class="code" href="_mvr_mini_item_action_8h.html#a1c1a55aa783545e57ce88ca1e3d243bf">void</a>) start;
-<a name="l00122"></a>00122 
-<a name="l00128"></a>00128 - (<a class="code" href="_mvr_mini_item_action_8h.html#a1c1a55aa783545e57ce88ca1e3d243bf">void</a>) stop;
-<a name="l00129"></a>00129 
-<a name="l00133"></a><a class="code" href="interface_mvr_engine.html#a03977107f67c7366e2cf6ffcf630ce47">00133</a> @property(readonly, getter=isStarted) BOOL started;
-<a name="l00134"></a>00134 
-<a name="l00138"></a><a class="code" href="interface_mvr_engine.html#a6dbcc49763569d10b18c77f123d9eb06">00138</a> @property(copy) NSString* applicationDisplayName;
-<a name="l00139"></a>00139 
-<a name="l00149"></a><a class="code" href="interface_mvr_engine.html#ab82be71a1344356850d4fa81749910a6">00149</a> @property(readonly) NSSet* knownItems;
-<a name="l00150"></a>00150 
-<a name="l00154"></a>00154 - (<span class="keywordtype">void</span>) addKnownItem:(<a class="code" href="interface_mvr_mini_item.html" title="An item represents a block of data and metadata that can be transferred by the Mover...">MvrMiniItem</a>*) i;
-<a name="l00155"></a>00155 
-<a name="l00157"></a>00157 - (<span class="keywordtype">void</span>) removeAllKnownItems;
-<a name="l00158"></a>00158 
+<a name="l00092"></a>00092 <span class="keyword">@private</span>
+<a name="l00093"></a>00093         MvrModernWiFi* wifi;
+<a name="l00094"></a>00094         MvrScannerObserver* observer;
+<a name="l00095"></a>00095         L0UUID* identifier;
+<a name="l00096"></a>00096         
+<a name="l00097"></a>00097         NSMutableSet* knownItemsSet;
+<a name="l00098"></a>00098         
+<a name="l00099"></a>00099         BOOL registeredForShutdown, hasStoppedAfterEnteringBackground;
+<a name="l00100"></a>00100         
+<a name="l00101"></a><a class="code" href="interface_mvr_engine.html#a3f903ce7558ab355b39a2a1e68035841">00101</a>         NSSet* <a class="code" href="interface_mvr_engine.html#a3f903ce7558ab355b39a2a1e68035841" title="Sets and retrieves the allowed item types for this engine.">allowedItemTypes</a>;
+<a name="l00102"></a>00102         L0Map* incomingsBeingChecked;
+<a name="l00103"></a>00103         NSMutableSet* incomingsNotYetChecked;
+<a name="l00104"></a>00104         
+<a name="l00105"></a>00105         NSUInteger retainCountForKnownItems;
+<a name="l00106"></a>00106         BOOL isAnythingGoingOn;
+<a name="l00107"></a>00107         
+<a name="l00108"></a>00108         NSMutableSet* miniItemsBeingSent;
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00112"></a>00112 + (NSBundle*) moverMiniResourcesBundle;
+<a name="l00113"></a>00113 
+<a name="l00115"></a>00115 + (<a class="code" href="interface_mvr_engine.html" title="The engine coordinates Mover Mini activities, runs the Core so that discovery and...">MvrEngine</a>*) defaultEngine;
+<a name="l00116"></a>00116 
+<a name="l00122"></a>00122 - (<a class="code" href="_mvr_mini_item_action_8h.html#a1c1a55aa783545e57ce88ca1e3d243bf">void</a>) start;
+<a name="l00123"></a>00123 
+<a name="l00129"></a>00129 - (<a class="code" href="_mvr_mini_item_action_8h.html#a1c1a55aa783545e57ce88ca1e3d243bf">void</a>) stop;
+<a name="l00130"></a>00130 
+<a name="l00134"></a><a class="code" href="interface_mvr_engine.html#a03977107f67c7366e2cf6ffcf630ce47">00134</a> @property(readonly, getter=isStarted) BOOL started;
+<a name="l00135"></a>00135 
+<a name="l00139"></a><a class="code" href="interface_mvr_engine.html#a6dbcc49763569d10b18c77f123d9eb06">00139</a> @property(copy) NSString* applicationDisplayName;
+<a name="l00140"></a>00140 
+<a name="l00150"></a><a class="code" href="interface_mvr_engine.html#ab82be71a1344356850d4fa81749910a6">00150</a> @property(readonly) NSSet* knownItems;
+<a name="l00151"></a>00151 
+<a name="l00155"></a>00155 - (<span class="keywordtype">void</span>) addKnownItem:(<a class="code" href="interface_mvr_mini_item.html" title="An item represents a block of data and metadata that can be transferred by the Mover...">MvrMiniItem</a>*) i;
+<a name="l00156"></a>00156 
+<a name="l00158"></a>00158 - (<span class="keywordtype">void</span>) removeAllKnownItems;
 <a name="l00159"></a>00159 
-<a name="l00166"></a>00166 @property(nonatomic, copy) NSSet* allowedItemTypes;
-<a name="l00167"></a>00167 
+<a name="l00160"></a>00160 
+<a name="l00167"></a>00167 @property(nonatomic, copy) NSSet* allowedItemTypes;
 <a name="l00168"></a>00168 
-<a name="l00177"></a>00177 - (<span class="keywordtype">void</span>) retainKnownItems;
-<a name="l00178"></a>00178 
-<a name="l00180"></a>00180 - (<span class="keywordtype">void</span>) releaseKnownItems;
-<a name="l00181"></a>00181 
+<a name="l00169"></a>00169 
+<a name="l00178"></a>00178 - (<span class="keywordtype">void</span>) retainKnownItems;
+<a name="l00179"></a>00179 
+<a name="l00181"></a>00181 - (<span class="keywordtype">void</span>) releaseKnownItems;
 <a name="l00182"></a>00182 
-<a name="l00184"></a>00184 - (NSSet*) incomingTransfersFrom:(<span class="keywordtype">id</span> &lt;MvrEndpoint&gt;) dest;
-<a name="l00185"></a>00185 
-<a name="l00187"></a>00187 - (NSSet*) outgoingTransfersTo:(<span class="keywordtype">id</span> &lt;MvrEndpoint&gt;) dest;
-<a name="l00188"></a>00188 
+<a name="l00183"></a>00183 
+<a name="l00185"></a>00185 - (NSSet*) incomingTransfersFrom:(<span class="keywordtype">id</span> &lt;MvrEndpoint&gt;) dest;
+<a name="l00186"></a>00186 
+<a name="l00188"></a>00188 - (NSSet*) outgoingTransfersTo:(<span class="keywordtype">id</span> &lt;MvrEndpoint&gt;) dest;
 <a name="l00189"></a>00189 
-<a name="l00190"></a>00190 @end
-<a name="l00191"></a>00191 
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191 @end
+<a name="l00192"></a>00192 
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -154,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Aug 29 22:36:13 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:22:05 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

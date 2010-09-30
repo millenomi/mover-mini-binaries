@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrTable.h File Reference</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrTable.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,13 +43,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrTable.h File Reference</h1>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrTable.h File Reference</h1>
 <p><a href="_mvr_table_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mvr_table.html">MvrTable</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance manages the 'table', the main UI provided by Mover Mini.  <a href="interface_mvr_table.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">protocol &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="protocol_mvr_table_delegate-p.html">&lt;MvrTableDelegate&gt;</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A table delegate will be informed of events coming from a <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance.  <a href="protocol_mvr_table_delegate-p.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_table_8h.html#afc2c6cb3f6c7dbe3706aca0009f51cb8">MvrTableAnimationStyle</a> { <a class="el" href="_mvr_table_8h.html#afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d">kMvrTableAnimationShift</a> =  0, 
 <a class="el" href="_mvr_table_8h.html#afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28">kMvrTableAnimationCover</a> =  1
@@ -78,8 +79,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d"></a><!-- doxytag: member="kMvrTableAnimationShift" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d" args="" -->kMvrTableAnimationShift</em>&nbsp;</td><td>
 <p>This animation style will cause the Mover table to appear from a side of the screen and push the contents of the window aside. </p>
 <p>(The contents of the window will be partially visible near the table.)</p>
-<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views app.</p>
+<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views up.</p>
 <p>Running the animation will cause the origins of all views in the window to be changed as part of the animation, and changed back as the animation undoes itself on hiding.</p>
+<p>This animation style cannot be undone cleanly if the orientation changes. It is the app's responsibility to prevent orientation changes while the table is showing with this animation style. If this cannot be avoided, you can use the Cover animation style instead.</p>
 <p>This is the default animation style. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28"></a><!-- doxytag: member="kMvrTableAnimationCover" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28" args="" -->kMvrTableAnimationCover</em>&nbsp;</td><td>
@@ -131,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Aug 29 22:36:13 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:22:05 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

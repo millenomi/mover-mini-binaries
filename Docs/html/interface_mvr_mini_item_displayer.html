@@ -54,7 +54,6 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
   <img src="interface_mvr_mini_item_displayer.gif" usemap="#MvrMiniItemDisplayer_map" alt=""/>
   <map id="MvrMiniItemDisplayer_map" name="MvrMiniItemDisplayer_map">
 <area href="interface_mvr_mini_image_displayer.html" alt="MvrMiniImageDisplayer" shape="rect" coords="0,56,146,80"/>
-<area href="interface_mvr_mini_image_displayer.html" alt="MvrMiniImageDisplayer" shape="rect" coords="156,56,302,80"/>
 </map>
  </div>
 </div>
@@ -62,12 +61,6 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <p><a href="class_mvr_mini_item_displayer-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mvr_mini_item_displayer.html#a398f641783aa51ab4c514b85317425f3">canDisplayItem:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns YES if this displayer can handle the specified item, NO otherwise.  <a href="#a398f641783aa51ab4c514b85317425f3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mvr_mini_item_displayer.html#ab302645c257f33b7046a22dd99f5c081">titleForItem:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the title for the specified item.  <a href="#ab302645c257f33b7046a22dd99f5c081"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(UIImage *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mvr_mini_item_displayer.html#ad26a0f3187961f8d4c734fb6e5a8c396">imageOfSize:forItem:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns an image that represents the displayed item.  <a href="#ad26a0f3187961f8d4c734fb6e5a8c396"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mvr_mini_item_displayer.html#a398f641783aa51ab4c514b85317425f3">canDisplayItem:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns YES if this displayer can handle the specified item, NO otherwise.  <a href="#a398f641783aa51ab4c514b85317425f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mvr_mini_item_displayer.html#ab302645c257f33b7046a22dd99f5c081">titleForItem:</a></td></tr>
@@ -85,24 +78,14 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes the given displayer from the set of all registered displayers.  <a href="#a6170a50e0f48d8b0ad49b8df54c80b98"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a6a994e86f5a2112fc0661bc10eb185c3">addDisplayer</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is a convenience method that produces a displayer (calling -init as the constructor), then adds it to the set of all registered displayers.  <a href="#a6a994e86f5a2112fc0661bc10eb185c3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a2fb1cabbc55cada176031f7b98d2349c">displayerForItem:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a displayer for the given item.  <a href="#a2fb1cabbc55cada176031f7b98d2349c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(NSSet *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a383c7662f16ac1b54e20df6c393dacea">allDisplayers</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns all registered displayer instances.  <a href="#a383c7662f16ac1b54e20df6c393dacea"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a27cf7cd67d3a6c1e11ef8476724dba2d">addDisplayer:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds the given displayer instances to the set of all registered displayers.  <a href="#a27cf7cd67d3a6c1e11ef8476724dba2d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a6170a50e0f48d8b0ad49b8df54c80b98">removeDisplayer:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes the given displayer from the set of all registered displayers.  <a href="#a6170a50e0f48d8b0ad49b8df54c80b98"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_mvr_mini_item_displayer.html#a6a994e86f5a2112fc0661bc10eb185c3">addDisplayer</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This is a convenience method that produces a displayer (calling -init as the constructor), then adds it to the set of all registered displayers.  <a href="#a6a994e86f5a2112fc0661bc10eb185c3"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Properties</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSSet *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de">displayableItemTypes</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a set of item types this instance can display.  <a href="#a12672da7088e6786de8dd8d9a3d232de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSSet *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mvr_mini_item_displayer.html#a93bb21dd6ce39db3573cee439d749e3a">displayableItemTypes</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a set of item types this instance can display.  <a href="#a93bb21dd6ce39db3573cee439d749e3a"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>An item displayer produces information that a table (a <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance) uses to decorate that item's visual representation (the slide). </p>
 <p>For example, it produces the title and icon that are shown on the slide.</p>
-<p>You can create your own displayers for your own types. To do so, create a subclass and override (at a minimum) <a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de" title="Returns a set of item types this instance can display.">displayableItemTypes</a> and <a class="el" href="interface_mvr_mini_item_displayer.html#ad26a0f3187961f8d4c734fb6e5a8c396" title="Returns an image that represents the displayed item.">imageOfSize:forItem: (MvrMiniItemDisplayer)</a>, though this assumes that you'll use default implementations for all other methods. Check up on the documentation for these methods to see what to override for more advanced functionality.</p>
+<p>You can create your own displayers for your own types. To do so, create a subclass and override (at a minimum) <a class="el" href="interface_mvr_mini_item_displayer.html#a93bb21dd6ce39db3573cee439d749e3a" title="Returns a set of item types this instance can display.">displayableItemTypes</a> and <a class="el" href="interface_mvr_mini_item_displayer.html#ad26a0f3187961f8d4c734fb6e5a8c396" title="Returns an image that represents the displayed item.">imageOfSize:forItem: (MvrMiniItemDisplayer)</a>, though this assumes that you'll use default implementations for all other methods. Check up on the documentation for these methods to see what to override for more advanced functionality.</p>
 <p>Once you have created your own displayer class, you have to register an instance of it using the <a class="el" href="interface_mvr_mini_item_displayer.html#a27cf7cd67d3a6c1e11ef8476724dba2d" title="Adds the given displayer instances to the set of all registered displayers.">addDisplayer: (MvrMiniItemDisplayer)</a> method (or the convenience <a class="el" href="interface_mvr_mini_item_displayer.html#a6a994e86f5a2112fc0661bc10eb185c3" title="This is a convenience method that produces a displayer (calling -init as the constructor)...">addDisplayer (MvrMiniItemDisplayer)</a> method, which creates one instance for you) before table instances will be able to use it.</p>
 <p>There is a default item displayer that produces a generic ("package") icon, which is returned for items for which no displayer is registered. Mover Mini also provides a UIKit-powered displayer for images which is not set up by default, but can be used if you want to transfer images; see the <a class="el" href="interface_mvr_mini_image_displayer.html">MvrMiniImageDisplayer</a> class for more information. </p>
 <hr/><h2>Member Function Documentation</h2>
@@ -124,50 +107,7 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <p>This is a convenience method that produces a displayer (calling -init as the constructor), then adds it to the set of all registered displayers. </p>
 <p>This is the recommended way to add a displayer. </p>
 
-<p>Implemented in <a class="el" href="interface_mvr_mini_image_displayer.html#a0fbf73284086a6cc35f3b77c22184d3a">MvrMiniImageDisplayer</a>, and <a class="el" href="interface_mvr_mini_image_displayer.html#a0fbf73284086a6cc35f3b77c22184d3a">MvrMiniImageDisplayer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a994e86f5a2112fc0661bc10eb185c3"></a><!-- doxytag: member="MvrMiniItemDisplayer::addDisplayer" ref="a6a994e86f5a2112fc0661bc10eb185c3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (void) addDisplayer </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>This is a convenience method that produces a displayer (calling -init as the constructor), then adds it to the set of all registered displayers. </p>
-<p>This is the recommended way to add a displayer. </p>
-
-<p>Implemented in <a class="el" href="interface_mvr_mini_image_displayer.html#a0fbf73284086a6cc35f3b77c22184d3a">MvrMiniImageDisplayer</a>, and <a class="el" href="interface_mvr_mini_image_displayer.html#a0fbf73284086a6cc35f3b77c22184d3a">MvrMiniImageDisplayer</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a27cf7cd67d3a6c1e11ef8476724dba2d"></a><!-- doxytag: member="MvrMiniItemDisplayer::addDisplayer:" ref="a27cf7cd67d3a6c1e11ef8476724dba2d" args="(MvrMiniItemDisplayer *displayer)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (void) addDisplayer: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item_displayer.html">MvrMiniItemDisplayer</a> *)&nbsp;</td>
-          <td class="paramname"> <em>displayer</em></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Adds the given displayer instances to the set of all registered displayers. </p>
-<p>Once added, a displayer will be available for all <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instances to use. </p>
+<p>Implemented in <a class="el" href="interface_mvr_mini_image_displayer.html#a0fbf73284086a6cc35f3b77c22184d3a">MvrMiniImageDisplayer</a>.</p>
 
 </div>
 </div>
@@ -212,26 +152,6 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 
 </div>
 </div>
-<a class="anchor" id="a383c7662f16ac1b54e20df6c393dacea"></a><!-- doxytag: member="MvrMiniItemDisplayer::allDisplayers" ref="a383c7662f16ac1b54e20df6c393dacea" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (NSSet*) allDisplayers </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns all registered displayer instances. </p>
-<p>This set does not include the generic displayer. </p>
-
-</div>
-</div>
 <a class="anchor" id="a398f641783aa51ab4c514b85317425f3"></a><!-- doxytag: member="MvrMiniItemDisplayer::canDisplayItem:" ref="a398f641783aa51ab4c514b85317425f3" args="(MvrMiniItem *item)" -->
 <div class="memitem">
 <div class="memproto">
@@ -249,52 +169,8 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <div class="memdoc">
 
 <p>Returns YES if this displayer can handle the specified item, NO otherwise. </p>
-<p>The default implementation of this method returns YES if the item's type is one of this displayer's displayable types (returned by <a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de" title="Returns a set of item types this instance can display.">displayableItemTypes</a>), NO otherwise; this implementation can be entirely overridden if needed.</p>
-<p>Note that <a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de" title="Returns a set of item types this instance can display.">displayableItemTypes</a> is an abstract method; therefore, letting this method's default implementation be called without overriding that one is a programmer error. </p>
-
-</div>
-</div>
-<a class="anchor" id="a398f641783aa51ab4c514b85317425f3"></a><!-- doxytag: member="MvrMiniItemDisplayer::canDisplayItem:" ref="a398f641783aa51ab4c514b85317425f3" args="(MvrMiniItem *item)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) canDisplayItem: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *)&nbsp;</td>
-          <td class="paramname"> <em>item</em></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns YES if this displayer can handle the specified item, NO otherwise. </p>
-<p>The default implementation of this method returns YES if the item's type is one of this displayer's displayable types (returned by <a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de" title="Returns a set of item types this instance can display.">displayableItemTypes</a>), NO otherwise; this implementation can be entirely overridden if needed.</p>
-<p>Note that <a class="el" href="interface_mvr_mini_item_displayer.html#a12672da7088e6786de8dd8d9a3d232de" title="Returns a set of item types this instance can display.">displayableItemTypes</a> is an abstract method; therefore, letting this method's default implementation be called without overriding that one is a programmer error. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2fb1cabbc55cada176031f7b98d2349c"></a><!-- doxytag: member="MvrMiniItemDisplayer::displayerForItem:" ref="a2fb1cabbc55cada176031f7b98d2349c" args="(MvrMiniItem *item)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (id) displayerForItem: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *)&nbsp;</td>
-          <td class="paramname"> <em>item</em></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns a displayer for the given item. </p>
-<p>If there are multiple displayers that can display the specified item, which one is returned exactly is undefined.</p>
-<p>If no displayer is available for the item, a generic displayer of a private class is returned instead. </p>
+<p>The default implementation of this method returns YES if the item's type is one of this displayer's displayable types (returned by <a class="el" href="interface_mvr_mini_item_displayer.html#a93bb21dd6ce39db3573cee439d749e3a" title="Returns a set of item types this instance can display.">displayableItemTypes</a>), NO otherwise; this implementation can be entirely overridden if needed.</p>
+<p>Note that <a class="el" href="interface_mvr_mini_item_displayer.html#a93bb21dd6ce39db3573cee439d749e3a" title="Returns a set of item types this instance can display.">displayableItemTypes</a> is an abstract method; therefore, letting this method's default implementation be called without overriding that one is a programmer error. </p>
 
 </div>
 </div>
@@ -351,58 +227,6 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 
 </div>
 </div>
-<a class="anchor" id="ad26a0f3187961f8d4c734fb6e5a8c396"></a><!-- doxytag: member="MvrMiniItemDisplayer::imageOfSize:forItem:" ref="ad26a0f3187961f8d4c734fb6e5a8c396" args="(CGSize s,[forItem] MvrMiniItem *item)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (UIImage*) imageOfSize: </td>
-          <td></td>
-          <td class="paramtype">(CGSize)&nbsp;</td>
-          <td class="paramname"> <em>s</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">forItem:</td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *)&nbsp;</td>
-          <td class="paramname"> <em>item</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns an image that represents the displayed item. </p>
-<p>The image should not exceed the given size; it can be larger, but it will be scaled down when displayed.</p>
-<p>The default implementation of this method is abstract and will cause an exception to be thrown when called. You must override this method before your displayer can function properly. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6170a50e0f48d8b0ad49b8df54c80b98"></a><!-- doxytag: member="MvrMiniItemDisplayer::removeDisplayer:" ref="a6170a50e0f48d8b0ad49b8df54c80b98" args="(MvrMiniItemDisplayer *displayer)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (void) removeDisplayer: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item_displayer.html">MvrMiniItemDisplayer</a> *)&nbsp;</td>
-          <td class="paramname"> <em>displayer</em></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Removes the given displayer from the set of all registered displayers. </p>
-<p>See <a class="el" href="interface_mvr_mini_item_displayer.html#a27cf7cd67d3a6c1e11ef8476724dba2d" title="Adds the given displayer instances to the set of all registered displayers.">addDisplayer:</a> for more information on registering. </p>
-
-</div>
-</div>
 <a class="anchor" id="a6170a50e0f48d8b0ad49b8df54c80b98"></a><!-- doxytag: member="MvrMiniItemDisplayer::removeDisplayer:" ref="a6170a50e0f48d8b0ad49b8df54c80b98" args="(MvrMiniItemDisplayer *displayer)" -->
 <div class="memitem">
 <div class="memproto">
@@ -441,38 +265,17 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <div class="memdoc">
 
 <p>Returns the title for the specified item. </p>
-<p>The default implementation returns the <a class="el" href="interface_mvr_mini_item.html#adb15002fcc1fe9cf34088981acb78117" title="Returns the title of the item.">MvrMiniItem::title</a>, but this may be overridden if need be. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab302645c257f33b7046a22dd99f5c081"></a><!-- doxytag: member="MvrMiniItemDisplayer::titleForItem:" ref="ab302645c257f33b7046a22dd99f5c081" args="(MvrMiniItem *item)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSString*) titleForItem: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *)&nbsp;</td>
-          <td class="paramname"> <em>item</em></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns the title for the specified item. </p>
-<p>The default implementation returns the <a class="el" href="interface_mvr_mini_item.html#adb15002fcc1fe9cf34088981acb78117" title="Returns the title of the item.">MvrMiniItem::title</a>, but this may be overridden if need be. </p>
+<p>The default implementation returns the <a class="el" href="interface_mvr_mini_item.html#a1211832d55275e4512a7ac7ecacf9d59" title="Returns the title of the item.">MvrMiniItem::title</a>, but this may be overridden if need be. </p>
 
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a12672da7088e6786de8dd8d9a3d232de"></a><!-- doxytag: member="MvrMiniItemDisplayer::displayableItemTypes" ref="a12672da7088e6786de8dd8d9a3d232de" args="" -->
+<a class="anchor" id="a93bb21dd6ce39db3573cee439d749e3a"></a><!-- doxytag: member="MvrMiniItemDisplayer::displayableItemTypes" ref="a93bb21dd6ce39db3573cee439d749e3a" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (NSSet *) displayableItemTypes<code> [read, assign]</code></td>
+          <td class="memname">- (NSSet*) displayableItemTypes<code> [read, assign]</code></td>
         </tr>
       </table>
 </div>
@@ -482,13 +285,12 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 <p>(For more information on item types, see <a class="el" href="interface_mvr_mini_item.html#af9522715ef6818fab39be0386ec84e33" title="Returns an UTI for this item.">MvrMiniItem::type</a>.) This is used by the default implementation of <a class="el" href="interface_mvr_mini_item_displayer.html#a398f641783aa51ab4c514b85317425f3" title="Returns YES if this displayer can handle the specified item, NO otherwise.">canDisplayItem:</a>.</p>
 <p>The default implementation of this property is abstract and will cause an exception to be thrown when the property is accessed. You must override this method (or <a class="el" href="interface_mvr_mini_item_displayer.html#a398f641783aa51ab4c514b85317425f3" title="Returns YES if this displayer can handle the specified item, NO otherwise.">canDisplayItem:</a>) before your displayer can function properly. </p>
 
-<p>Implemented in <a class="el" href="interface_mvr_mini_image_displayer.html#ae97879be8f466de573386738d3b29287">MvrMiniImageDisplayer</a>.</p>
+<p>Implemented in <a class="el" href="interface_mvr_mini_image_displayer.html#aa6499f2d70762eed87e686d2b082da54">MvrMiniImageDisplayer</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphoneos/Headers/MoverMini/<a class="el" href="_debug-iphoneos_2_headers_2_mover_mini_2_mvr_mini_item_displayer_8h_source.html">MvrMiniItemDisplayer.h</a></li>
-<li>/Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/<a class="el" href="_debug-iphonesimulator_2_headers_2_mover_mini_2_mvr_mini_item_displayer_8h_source.html">MvrMiniItemDisplayer.h</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/<a class="el" href="_mvr_mini_item_displayer_8h_source.html">MvrMiniItemDisplayer.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -505,7 +307,7 @@ Inheritance diagram for MvrMiniItemDisplayer:</div>
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Aug 29 22:49:26 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:22:05 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

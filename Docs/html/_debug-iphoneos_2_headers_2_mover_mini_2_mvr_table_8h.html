@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrTable.h File Reference</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrTable.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,7 +43,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/millenomi/Developer/Paraverse/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrTable.h File Reference</h1>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrTable.h File Reference</h1>
 <p><a href="_debug-iphoneos_2_headers_2_mover_mini_2_mvr_table_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Classes</h2></td></tr>
@@ -63,6 +63,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a class="el" href="_debug-iphonesimulator_2_headers_2_mover_mini_2_mvr_table_8h.html#a9bc130449247c2cdda4fe8564d08166ba3a19ff1969ce0a144fa1a13240500426">kMvrTableShowCauseProgrammatic</a> =  0, 
 <a class="el" href="_debug-iphonesimulator_2_headers_2_mover_mini_2_mvr_table_8h.html#a9bc130449247c2cdda4fe8564d08166bab5be57940349e4300e590481f234f13d">kMvrTableShowCauseReceivedItem</a> =  1
  }</td></tr>
+<tr><td colspan="2"><h2>Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_debug-iphoneos_2_headers_2_mover_mini_2_mvr_table_8h.html#a3da753e00605561bbe22a496d16d578b">kMvrTableDidChangeCanShowNotification</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This notification is sent whenever screen configuration has changed in a way that could prevent, or allow, showing the Mover table.  <a href="#a3da753e00605561bbe22a496d16d578b"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8"></a><!-- doxytag: member="MvrTable.h::MvrTableAnimationStyle" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8" args="" -->
@@ -82,8 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d"></a><!-- doxytag: member="kMvrTableAnimationShift" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d" args="" -->kMvrTableAnimationShift</em>&nbsp;</td><td>
 <p>This animation style will cause the Mover table to appear from a side of the screen and push the contents of the window aside. </p>
 <p>(The contents of the window will be partially visible near the table.)</p>
-<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views app.</p>
+<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views up.</p>
 <p>Running the animation will cause the origins of all views in the window to be changed as part of the animation, and changed back as the animation undoes itself on hiding.</p>
+<p>This animation style cannot be undone cleanly if the orientation changes. It is the app's responsibility to prevent orientation changes while the table is showing with this animation style. If this cannot be avoided, you can use the Cover animation style instead.</p>
 <p>This is the default animation style. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28"></a><!-- doxytag: member="kMvrTableAnimationCover" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28" args="" -->kMvrTableAnimationCover</em>&nbsp;</td><td>
@@ -94,8 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d"></a><!-- doxytag: member="kMvrTableAnimationShift" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8ad070a7aae57f4c305e1cfa90e50d578d" args="" -->kMvrTableAnimationShift</em>&nbsp;</td><td>
 <p>This animation style will cause the Mover table to appear from a side of the screen and push the contents of the window aside. </p>
 <p>(The contents of the window will be partially visible near the table.)</p>
-<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views app.</p>
+<p>In the phone idiom (that is, when running on an iPhone app), the table appears at the bottom of the window and pushes the views up.</p>
 <p>Running the animation will cause the origins of all views in the window to be changed as part of the animation, and changed back as the animation undoes itself on hiding.</p>
+<p>This animation style cannot be undone cleanly if the orientation changes. It is the app's responsibility to prevent orientation changes while the table is showing with this animation style. If this cannot be avoided, you can use the Cover animation style instead.</p>
 <p>This is the default animation style. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28"></a><!-- doxytag: member="kMvrTableAnimationCover" ref="afc2c6cb3f6c7dbe3706aca0009f51cb8a151ccb8337478e6b7ac73a79e5643d28" args="" -->kMvrTableAnimationCover</em>&nbsp;</td><td>
@@ -138,6 +143,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a3da753e00605561bbe22a496d16d578b"></a><!-- doxytag: member="MvrTable.h::kMvrTableDidChangeCanShowNotification" ref="a3da753e00605561bbe22a496d16d578b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_debug-iphonesimulator_2_headers_2_mover_mini_2_mvr_table_8h.html#a3da753e00605561bbe22a496d16d578b">kMvrTableDidChangeCanShowNotification</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This notification is sent whenever screen configuration has changed in a way that could prevent, or allow, showing the Mover table. </p>
+<p>At the time this notification is posted, a few things may happen. The most important is that the table, if showing, may be hidden. However, this is only possible with the Cover animation style. If you're using the Shift animation style and this notification is posted, an exception will be raised. </p>
+
+</div>
+</div>
 </div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -153,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Aug 29 22:49:25 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:07:18 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
