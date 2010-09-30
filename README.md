@@ -24,7 +24,7 @@ You can now deploy this library in iPad applications and the library can behave 
 
 	The `Slide` animation is more aesthetically pleasant, all in all, and thus remains the default. If you use it you must guarantee that the application will never change its orientation while the table is onscreen. If you cannot guarantee it, you can use the `Cover` style instead now. (The table is only displayable in a portrait orientation, so landscape-only apps are not supported for now.)
 
-* The `canShowTable` property has been added. If the orientation is not right, it will return `NO` and the `show` and `showByAddingItem:` methods will not display the table (although the item will still be added, if given). The table now posts `kMvrTableDidChangeCanShowNotification` to the default notification center when the value of this property has potentially changed. (It may also hide the table at this time, as above.)
+* The `canShowTable` property has been added. If the orientation is not right, it will return `NO` and the `show` and `showByAddingItem:` methods will not display the table (although the item will still be added, if given). The table now has a new delegate method that's called when the value of this property has potentially changed. (It may also hide the table at this time, as above.)
 
 The following known issues have changed, but remain:
 
