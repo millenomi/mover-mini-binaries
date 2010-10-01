@@ -64,9 +64,10 @@ To send something with Mover Mini, you add it to the table and let Mover handle 
 	#import <MobileCoreServices/MobileCoreServices.h>
 
 	// …
-	
-	MvrMiniItem* item = [MvrMiniItem itemWithContentsOfFile:pngFileToSend type:(id) kUTTypePNG userInfo:nil];
-	[table showByAddingItem:item];
+	NSError* e;
+	MvrMiniItem* item = [MvrMiniItem itemWithContentsOfFile:pngFileToSend title:@"Some Image!" type:(id) kUTTypePNG userInfo:nil error:&e];
+	if (item)
+		[table showByAddingItem:item];
 	
 	// the user can then slide the picture with a finger to send it
 
