@@ -45,6 +45,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>Class List</h1>Here are the classes, structs, unions and interfaces with brief descriptions:<table>
+  <tr><td class="indexkey"><a class="el" href="interface_i_l_sensor_sink.html">ILSensorSink</a></td><td class="indexvalue">Debug only: A sensor sink is the ultimate destination of all messages produced by telemetry-enabled classes </td></tr>
+  <tr><td class="indexkey"><a class="el" href="protocol_i_l_sensor_sink_tap-p.html">&lt;ILSensorSinkTap&gt;</a></td><td class="indexvalue">Debug only: A sensor sink tap can receive all logging messages that are sent to a <a class="el" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a> </td></tr>
   <tr><td class="indexkey"><a class="el" href="protocol_mvr_endpoint-p.html">&lt;MvrEndpoint&gt;</a></td><td class="indexvalue">Represents another device on the network that Mover Mini can send to or receive from </td></tr>
   <tr><td class="indexkey"><a class="el" href="interface_mvr_engine.html">MvrEngine</a></td><td class="indexvalue">The engine coordinates Mover Mini activities, runs the Core so that discovery and transfers can happen, and produces endpoint (<a class="el" href="protocol_mvr_endpoint-p.html">MvrEndpoint</a>) and item (<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a>) objects for you </td></tr>
   <tr><td class="indexkey"><a class="el" href="interface_mvr_mini_image_displayer.html">MvrMiniImageDisplayer</a></td><td class="indexvalue">This displayer shows images on the table as thumbnails; this is similar to how images are shown in the Mover application </td></tr>
@@ -55,6 +57,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="indexkey"><a class="el" href="protocol_mvr_mini_outgoing-p.html">&lt;MvrMiniOutgoing&gt;</a></td><td class="indexvalue">Represents an outgoing transfer in progress </td></tr>
   <tr><td class="indexkey"><a class="el" href="interface_mvr_table.html">MvrTable</a></td><td class="indexvalue">A <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance manages the 'table', the main UI provided by Mover Mini </td></tr>
   <tr><td class="indexkey"><a class="el" href="protocol_mvr_table_delegate-p.html">&lt;MvrTableDelegate&gt;</a></td><td class="indexvalue">A table delegate will be informed of events coming from a <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance </td></tr>
+  <tr><td class="indexkey"><a class="el" href="interface_n_s_object_07_i_l_sensor_debugging_description_08.html">NSObject(ILSensorDebuggingDescription)</a></td><td class="indexvalue"></td></tr>
 </table>
 </div>
 <!--- window showing the filter options -->
@@ -62,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -71,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:22:05 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sat Oct 2 10:44:56 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

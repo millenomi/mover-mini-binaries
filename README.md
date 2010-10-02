@@ -4,6 +4,74 @@ This is a pre-alpha version of the Mover Mini library. This library allows you t
 
 Following this section are update news. Look below them for a quick start on the use of this library.
 
+# Update: Oct 2nd, 2010
+
+## The TL;DR
+
+Lots more logging (but structured thanks to Labs Telemetry). Use ⌘F, search for `MvrTable`, to catch 'em all.
+
+You can now dismiss the table after performing an action (see the new parameter to the action block, or the `actionAfterPerforming` property of `MvrMiniItemAction`).
+
+## The long version
+
+### Telemetry
+
+This version of Mover Mini includes the first steps of Labs Telemetry, a structured and remote (!) logging library. The remote part has not been inserted into Mini, but there are hooks already that you can use to Do Your Thing if you want to. See the newly-made-public `ILSensorSink` class for more information on how you can intercept and examine structured logging messages (hint: make an object that conforms to the `ILSensorSinkTap` protocol, then `[ILSensorSink sharedSink].tap = object;`).
+
+`MvrTable` has been updated to give extensive logging on user interactions. I know, Mini already puts out a —ton of logging messages, mostly coming from older logging tech in Mover Core (and thus out of the control and purview of Telemetry), but the new tech clearly marks (in a structured way) where the message is coming from. In this release, you will see messages of this kind:
+
+	2010-10-02 10:31:47.601 MoverMini-TestApp[2706:207]  -> from (
+	    ILSensorSession,
+	    "ILSensorSession:0x637b4b0",
+	    MvrTable,
+	    "MvrTable:0x6057370"
+	)
+		{
+	    content =     {
+	        animationStyle = 1;
+	        boundsInWindowForTableOverlay = "{{0, 0}, {320, 480}}";
+	        currentAction = "did end hiding";
+	        hidingReason = "user dismissed by tapping background";
+	        previousStatusBarStyle = 0;
+	    };
+	    sessionEventKind = end;
+	}
+	
+Some hints: "`content`" is what the table wants to tell you (for example, see the "`hidingReason`"). Some messages are organized in "sessions" (basically: things that start, do something, then end), and the table produces a session that starts when the table is about to be shown and ends when it has been hidden, so you can track its progression (see `sessionEventKind`s with `start`, `update` and `end` values). You can track a session from its identifier ("`ILSensorSession:0x637b4b0`" in this case).
+
+There are also one-off messages which are not organized into sessions; they're still marked as coming from `MvrTable` though:
+
+	2010-10-02 10:31:44.482 MoverMini-TestApp[2706:207]  -> from (
+	    MvrTable,
+	    "MvrTable:0x6057370"
+	)
+		{
+	    content = "Selecting item: <MvrMiniItem: 0x63030b0>";
+	    function = "-[MvrTable setSelectedSlide:]";
+	    line = 465;
+	}
+	
+For now, just use **Edit > Find > Find…** in the run log in Xcode and use `MvrTable` as a search string to catch all the stuff coming from the table UI. More convenient methods should be available in future updates.
+
+### Hiding the table
+
+This one is much easier: you can now hide the table when an action has been performed. If you use a block, you'll do this:
+	
+	^(MvrItem* item, MvrMiniItemActionAfterPerforming* after) {
+		// do stuff
+		*after = kMvrMiniItemActionHideTableAfterwards;
+	}
+	
+and if you use target/action, you'll do this:
+
+	- (void) performOnItem:(MvrMiniItem*) item forAction:(MvrMiniItemAction*) action;
+	{
+		// do stuff
+		action.actionAfterPerforming = kMvrMiniItemActionHideTableAfterwards;
+	}
+	
+The default is to do nothing (`kMvrMiniItemActionDoNothing`). This changes the signature of action blocks, so you will have to add the second argument above if you're using block actions or your app will not compile against this new version.
+
 # Update: Sep 30th, 2010
 
 ## The TL;DR
@@ -84,7 +152,7 @@ Adding actions is simple:
 	MvrMiniItemAction* openAction = [MvrMiniItemAction
 		actionWithTitle:@"Open %(title)"
 		replaceFormatSpecifiers:YES // %(title) will become the title of the slide
-		actionBlock:^(MvrMiniItem* receivedItem) {
+		actionBlock:^(MvrMiniItem* receivedItem, MvrMiniItemActionAfterPerforming* after) {
 			// Do cool stuff with the received item
 		}];
 

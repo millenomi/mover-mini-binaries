@@ -10,5 +10,6 @@
 	#import "MvrMiniItemDisplayer.h"
 	#import "MvrMiniImageDisplayer.h"
 	#import "MvrMiniProtocol.h"
+	#import "ILSensorSink.h"
 
 #endif

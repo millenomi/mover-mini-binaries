@@ -9,7 +9,28 @@
 #import <Foundation/Foundation.h>
 #import "MvrMiniItem.h"
 
-typedef void (^MvrMiniItemActionBlock)(MvrMiniItem* item);
+/**
+ This enumeration includes actions the table can perform on your behalf after an MvrMiniItemAction is executed for a particular item.
+ 
+ To have these actions executed, set the MvrMiniItemAction#actionAfterPerforming property, or see the uses of this type in MvrMiniItemAction#performActionOnItem: and MvrMiniItemActionBlock.
+ */
+enum MvrMiniItemActionAfterPerforming {
+	/** Does nothing after the action is performed. For actions that use blocks as their implementation, this is the default.
+	 */
+	kMvrMiniItemActionDoNothing = 0,
+	
+	/** Hides the table after the action is performed. */
+	kMvrMiniItemActionHideTableAfterwards,
+};
+typedef NSInteger MvrMiniItemActionAfterPerforming;
+
+/**
+ The block that implements the behavior of a MvrMiniItemAction created with MvrMiniItemAction#initWithTitle:replaceFormatSpecifiers:actionBlock: or MvrMiniItemAction#actionWithTitle:replaceFormatSpecifiers:actionBlock:.
+ 
+ @param item The item to perform the action on.
+ @param after after The pointer to a MvrMiniItemActionAfterPerforming value. This action will be performed after this block returns. If you don't change it, it will be set to the value of the MvrMiniItemAction#actionAfterPerforming property (by default @ref kMvrMiniItemActionDoNothing).
+ */
+typedef void (^MvrMiniItemActionBlock)(MvrMiniItem* item, MvrMiniItemActionAfterPerforming* after);
 
 /**
  An item action is an action that can be performed on an item on the Mover table. For example, you may provide an "Open" action to move the item's contents to your application. The behavior of an item action can be given as a block, or be specified through a target/action pair. Actions are displayed on the Mover table as buttons when an item is selected by touching, and may also be used in other contexts.
@@ -84,7 +105,16 @@ typedef void (^MvrMiniItemActionBlock)(MvrMiniItem* item);
 
 /**
  Performs the item action on the specified item. The default implementation invokes the action on the specified target, or invokes the block, depending on what default constructor was called. Subclasses that do not call either default constructor must override this method.
+ 
+ This method returns an action for the table to perform.
  */
-- (void) performActionOnItem:(MvrMiniItem*) i;
+- (MvrMiniItemActionAfterPerforming) performActionOnItem:(MvrMiniItem*) i;
+
+/**
+ The action to execute after performing the action (in #performActionOnItem:). The default implementation of #performActionOnItem: returns the value of this property.
+ 
+ By default, the value of this property is @ref kMvrMiniItemActionDoNothing.
+ */
+@property(nonatomic, assign) MvrMiniItemActionAfterPerforming actionAfterPerforming;
 
 @end

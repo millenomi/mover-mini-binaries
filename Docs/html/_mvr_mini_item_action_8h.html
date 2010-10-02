@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrMiniItemAction.h File Reference</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrMiniItemAction.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,17 +43,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphonesimulator/Headers/MoverMini/MvrMiniItemAction.h File Reference</h1>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrMiniItemAction.h File Reference</h1>
 <p><a href="_mvr_mini_item_action_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mvr_mini_item_action.html">MvrMiniItemAction</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An item action is an action that can be performed on an item on the Mover table.  <a href="interface_mvr_mini_item_action.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef NSInteger&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_mini_item_action_8h.html#a97a06bce95861c8c894c0136e7d28820">MvrMiniItemActionAfterPerforming</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+<a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">MvrMiniItemActionAfterPerforming</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_mini_item_action_8h.html#a88a210974830fa25de5ee27ea8154198">after</a></td></tr>
+<tr><td colspan="2"><h2>Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">MvrMiniItemActionAfterPerforming</a> { <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803ea9a12f4170b11ec72ded929c36b7f1b15">kMvrMiniItemActionDoNothing</a> =  0, 
+<a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803ea5795099b5c100d44e04df5bba8bc8ba0">kMvrMiniItemActionHideTableAfterwards</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>This enumeration includes actions the table can perform on your behalf after an <a class="el" href="interface_mvr_mini_item_action.html" title="An item action is an action that can be performed on an item on the Mover table.">MvrMiniItemAction</a> is executed for a particular item. </p>
+ <a href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_mini_item_action_8h.html#a1c1a55aa783545e57ce88ca1e3d243bf">void</a> (^MvrMiniItemActionBlock)(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *item)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be">void</a> (^MvrMiniItemActionBlock)(<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a> *item</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The block that implements the behavior of a <a class="el" href="interface_mvr_mini_item_action.html" title="An item action is an action that can be performed on an item on the Mover table.">MvrMiniItemAction</a> created with <a class="el" href="interface_mvr_mini_item_action.html#a2c080c73918a7c5f91491023b405cb69" title="Creates an item action that, when performed, invokes the given block.">initWithTitle:replaceFormatSpecifiers:actionBlock: (MvrMiniItemAction)</a> or <a class="el" href="interface_mvr_mini_item_action.html#a2c25e4b31aa4bed8962159cb1072050a" title="Convenience constructor for item actions that invoke a block.">actionWithTitle:replaceFormatSpecifiers:actionBlock: (MvrMiniItemAction)</a>.  <a href="#affd38961b074d34617a5bd59718231be"></a><br/></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="a88a210974830fa25de5ee27ea8154198"></a><!-- doxytag: member="MvrMiniItemAction.h::after" ref="a88a210974830fa25de5ee27ea8154198" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">MvrMiniItemActionAfterPerforming</a>* <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">after</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97a06bce95861c8c894c0136e7d28820"></a><!-- doxytag: member="MvrMiniItemAction.h::MvrMiniItemActionAfterPerforming" ref="a97a06bce95861c8c894c0136e7d28820" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef NSInteger <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">MvrMiniItemActionAfterPerforming</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="aa3351ce0389beec3bd7ba2b6f310803e"></a><!-- doxytag: member="MvrMiniItemAction.h::MvrMiniItemActionAfterPerforming" ref="aa3351ce0389beec3bd7ba2b6f310803e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803e">MvrMiniItemActionAfterPerforming</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This enumeration includes actions the table can perform on your behalf after an <a class="el" href="interface_mvr_mini_item_action.html" title="An item action is an action that can be performed on an item on the Mover table.">MvrMiniItemAction</a> is executed for a particular item. </p>
+<p>To have these actions executed, set the <a class="el" href="interface_mvr_mini_item_action.html#aeedb7e6a1c4ea49a0e2c9c238abc0893" title="The action to execute after performing the action (in performActionOnItem:).">MvrMiniItemAction::actionAfterPerforming</a> property, or see the uses of this type in <a class="el" href="interface_mvr_mini_item_action.html#aa6d1619cfe5b8d4c5f543913c394df93" title="Performs the item action on the specified item.">performActionOnItem: (MvrMiniItemAction)</a> and MvrMiniItemActionBlock. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="aa3351ce0389beec3bd7ba2b6f310803ea9a12f4170b11ec72ded929c36b7f1b15"></a><!-- doxytag: member="kMvrMiniItemActionDoNothing" ref="aa3351ce0389beec3bd7ba2b6f310803ea9a12f4170b11ec72ded929c36b7f1b15" args="" -->kMvrMiniItemActionDoNothing</em>&nbsp;</td><td>
+<p>Does nothing after the action is performed. </p>
+<p>For actions that use blocks as their implementation, this is the default. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aa3351ce0389beec3bd7ba2b6f310803ea5795099b5c100d44e04df5bba8bc8ba0"></a><!-- doxytag: member="kMvrMiniItemActionHideTableAfterwards" ref="aa3351ce0389beec3bd7ba2b6f310803ea5795099b5c100d44e04df5bba8bc8ba0" args="" -->kMvrMiniItemActionHideTableAfterwards</em>&nbsp;</td><td>
+<p>Hides the table after the action is performed. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a1c1a55aa783545e57ce88ca1e3d243bf"></a><!-- doxytag: member="MvrMiniItemAction.h::void" ref="a1c1a55aa783545e57ce88ca1e3d243bf" args="(^MvrMiniItemActionBlock)(MvrMiniItem *item)" -->
+<a class="anchor" id="affd38961b074d34617a5bd59718231be"></a><!-- doxytag: member="MvrMiniItemAction.h::void" ref="affd38961b074d34617a5bd59718231be" args="(^MvrMiniItemActionBlock)(MvrMiniItem *item" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -69,6 +135,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
+<p>The block that implements the behavior of a <a class="el" href="interface_mvr_mini_item_action.html" title="An item action is an action that can be performed on an item on the Mover table.">MvrMiniItemAction</a> created with <a class="el" href="interface_mvr_mini_item_action.html#a2c080c73918a7c5f91491023b405cb69" title="Creates an item action that, when performed, invokes the given block.">initWithTitle:replaceFormatSpecifiers:actionBlock: (MvrMiniItemAction)</a> or <a class="el" href="interface_mvr_mini_item_action.html#a2c25e4b31aa4bed8962159cb1072050a" title="Convenience constructor for item actions that invoke a block.">actionWithTitle:replaceFormatSpecifiers:actionBlock: (MvrMiniItemAction)</a>. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>item</em>&nbsp;</td><td>The item to perform the action on. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>after</em>&nbsp;</td><td>after The pointer to a MvrMiniItemActionAfterPerforming value. This action will be performed after this block returns. If you don't change it, it will be set to the value of the <a class="el" href="interface_mvr_mini_item_action.html#aeedb7e6a1c4ea49a0e2c9c238abc0893" title="The action to execute after performing the action (in performActionOnItem:).">MvrMiniItemAction::actionAfterPerforming</a> property (by default <a class="el" href="_mvr_mini_item_action_8h.html#aa3351ce0389beec3bd7ba2b6f310803ea9a12f4170b11ec72ded929c36b7f1b15">kMvrMiniItemActionDoNothing</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div>
@@ -77,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Sep 30 23:22:05 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sat Oct 2 10:44:56 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

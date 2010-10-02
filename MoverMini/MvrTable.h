@@ -32,12 +32,6 @@ typedef enum {
 	kMvrTableAnimationCover = 1,
 } MvrTableAnimationStyle;
 
-/**
- This notification is sent whenever screen configuration has changed in a way that could prevent, or allow, showing the Mover table.
- 
- At the time this notification is posted, a few things may happen. The most important is that the table, if showing, may be hidden. However, this is only possible with the Cover animation style. If you're using the Shift animation style and this notification is posted, an exception will be raised.
- */
-extern NSString* const kMvrTableDidChangeCanShowNotification;
 
 @protocol MvrTableDelegate;
 
@@ -45,6 +39,7 @@ extern NSString* const kMvrTableDidChangeCanShowNotification;
  A MvrTable instance manages the 'table', the main UI provided by Mover Mini. The table appears underneath all controls in a window, in a way reminiscent of modal view controllers; the table will appear if you request it with the #show or #showByAddingItem: methods, and may also automatically appear when certain events occur (for example, an item is received). 
  */
 @interface MvrTable : NSObject {
+@private
 	UIStatusBarStyle statusBarStyle;
 	
 	NSMutableSet* displayedSlides;
@@ -64,9 +59,9 @@ extern NSString* const kMvrTableDidChangeCanShowNotification;
 + (BOOL) canUseMoverTable;
 
 /**
- Returns YES if the table can be displayed in this configuration, or NO otherwise. Calling #show and #showByAddingItem: will only succeed in showing the table if this property returns YES.
+ Returns YES if the table can be displayed in this configuration, or NO otherwise. Calling #show and #showByAddingItem: will only succeed in showing the table if this property returns YES (although items will still be added to the table silently anyway).
  
- The MvrTable objects sends a kMvrTableDidChangeCanShowNotification whenever the value of this property has potentially changed.
+ The MvrTable objects will call the MvrTableDelegate#moverTableDidChangeCanShow: method whenever the value of this property has potentially changed.
  */
 @property(readonly) BOOL canShowTable;
 
@@ -135,12 +130,33 @@ typedef enum {
 	kMvrTableShowCauseReceivedItem = 1,
 } MvrTableShowCause;
 
+
+/**
+ A table delegate will be informed of events coming from a MvrTable instance. See the MvrTable#delegate property for more information.
+ */
 @protocol MvrTableDelegate <NSObject>
 @optional
 
+/**
+ This method is called every time the table desires to display itself. This can happen due to various causes, both programmatically (as the result of your code calling the MvrTable#showByAddingItem: method) or because a new item has been received and the table desires to show it.
+ 
+ You can return NO to prevent displaying the table for the item. This method is not called for all received items; the table may not bother calling it if it determines it cannot show itself anyway.
+ */
 - (BOOL) moverTable:(MvrTable*) table shouldShowForNewlyAddedItem:(MvrMiniItem*) item withCause:(MvrTableShowCause) cause;
 
+/**
+ Called when the table is about to be shown onscreen.
+ */
 - (void) moverTableWillShow:(MvrTable*) table;
+
+/**
+ Called when the table is about to be hidden.
+ */
 - (void) moverTableDidHide:(MvrTable*) table;
+
+/**
+ Called when the screen configuration has changed and the table has (potentially) changed its MvrTable#canShowTable property. Call that method to retrieve the new value of the property.
+ */
+- (void) moverTableDidChangeCanShow:(MvrTable*) table;
 
 @end

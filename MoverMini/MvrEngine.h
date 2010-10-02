@@ -11,13 +11,6 @@
 @class L0Map;
 @protocol MvrEndpoint;
 
-/**
- Checks whether Mover Mini is currently available; it returns YES if it is, or NO if it is not.
- 
- If this function returns NO, no Mover Mini function, method, constant or class is safe for use. Call this function before using any of the above. Caching the result of this function call is allowed (that is, the value will not change during the lifetime of the application).
- */
-extern BOOL MvrMiniIsAvailable();
-
 
 /**
  This notification is posted whenever the engine stops (as per the MvrEngine#stop method).
@@ -89,6 +82,7 @@ extern NSString* const kMvrEngineOutgoingKey;
  You rarely interact directly with the engine (and you cannot access the private Core it manages); instead, you usually interact with the higher-level @ref MvrTable instance attached to your app's window, which automatically displays items and endpoints and starts transfers if needed.
  */
 @interface MvrEngine : NSObject {
+@private
 	MvrModernWiFi* wifi;
 	MvrScannerObserver* observer;
 	L0UUID* identifier;
