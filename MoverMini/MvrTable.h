@@ -155,7 +155,9 @@ typedef enum {
 - (void) moverTableDidHide:(MvrTable*) table;
 
 /**
- Called when the screen configuration has changed and the table has (potentially) changed its MvrTable#canShowTable property. Call that method to retrieve the new value of the property.
+ Called when the screen configuration has changed and the table has potentially changed its MvrTable#canShowTable property. Call that method to retrieve the new value of the property.
+ 
+ Please note that the property might not have changed since the last time this delegate method was called.
  */
 - (void) moverTableDidChangeCanShow:(MvrTable*) table;
 

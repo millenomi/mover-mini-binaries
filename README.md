@@ -4,6 +4,12 @@ This is a pre-alpha version of the Mover Mini library. This library allows you t
 
 Following this section are update news. Look below them for a quick start on the use of this library.
 
+# Update: Oct 5th, 2010
+
+`MvrEngine` has partial telemetry (logging) support now, and will log many (but not all) interesting events.
+
+Fixed a bug where a `MvrTable` could become unexpectedly detached from its window. `MvrTable`s should now no longer unattach themselves from the window they're initialized with, but will still not show themselves if then `show` or `showByAddingItem:` method is invoked while the window is hidden.
+
 # Update: Oct 2nd, 2010
 
 ## The TL;DR

@@ -58,7 +58,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mvr_table_delegate-p.html#a18c0f990244da15effce000b419dde9b">moverTableDidHide:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the table is about to be hidden.  <a href="#a18c0f990244da15effce000b419dde9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mvr_table_delegate-p.html#a493fad3a3e97df110a561c51cb60a40f">moverTableDidChangeCanShow:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the screen configuration has changed and the table has (potentially) changed its <a class="el" href="interface_mvr_table.html#a104274a20cdcbbf2a665abfd2cc2ceaa" title="Returns YES if the table can be displayed in this configuration, or NO otherwise...">MvrTable::canShowTable</a> property.  <a href="#a493fad3a3e97df110a561c51cb60a40f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the screen configuration has changed and the table has potentially changed its <a class="el" href="interface_mvr_table.html#a104274a20cdcbbf2a665abfd2cc2ceaa" title="Returns YES if the table can be displayed in this configuration, or NO otherwise...">MvrTable::canShowTable</a> property.  <a href="#a493fad3a3e97df110a561c51cb60a40f"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>A table delegate will be informed of events coming from a <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance. </p>
@@ -117,8 +117,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Called when the screen configuration has changed and the table has (potentially) changed its <a class="el" href="interface_mvr_table.html#a104274a20cdcbbf2a665abfd2cc2ceaa" title="Returns YES if the table can be displayed in this configuration, or NO otherwise...">MvrTable::canShowTable</a> property. </p>
-<p>Call that method to retrieve the new value of the property. </p>
+<p>Called when the screen configuration has changed and the table has potentially changed its <a class="el" href="interface_mvr_table.html#a104274a20cdcbbf2a665abfd2cc2ceaa" title="Returns YES if the table can be displayed in this configuration, or NO otherwise...">MvrTable::canShowTable</a> property. </p>
+<p>Call that method to retrieve the new value of the property.</p>
+<p>Please note that the property might not have changed since the last time this delegate method was called. </p>
 
 </div>
 </div>
@@ -180,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sat Oct 2 10:44:56 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Oct 5 20:31:11 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

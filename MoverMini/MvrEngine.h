@@ -75,7 +75,7 @@ extern NSString* const kMvrEngineErrorKey;
 extern NSString* const kMvrEngineOutgoingKey;
 
 
-@class MvrModernWiFi, MvrScannerObserver, MvrMiniItem, L0UUID;
+@class MvrModernWiFi, MvrScannerObserver, MvrMiniItem, L0UUID, L0Map;
 
 /**
  The engine coordinates Mover Mini activities, runs the Core so that discovery and transfers can happen, and produces endpoint (@ref MvrEndpoint) and item (@ref MvrMiniItem) objects for you.
@@ -99,6 +99,8 @@ extern NSString* const kMvrEngineOutgoingKey;
 	BOOL isAnythingGoingOn;
 	
 	NSMutableSet* miniItemsBeingSent;
+	
+	L0Map* sessions;
 }
 
 /** Returns a reference to the Mover Mini resources bundle. */

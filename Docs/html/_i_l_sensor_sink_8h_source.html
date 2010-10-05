@@ -73,18 +73,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064 @end
 <a name="l00065"></a>00065 
-<a name="l00068"></a><a class="code" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">00068</a> <span class="preprocessor">#define ILLogDict(...) \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">        [ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00073"></a><a class="code" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">00073</a> <span class="preprocessor">#define ILLog(x, ...) \</span>
-<a name="l00074"></a>00074 <span class="preprocessor">        [ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]</span>
-<a name="l00075"></a>00075 <span class="preprocessor"></span>
-<a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="interface_n_s_object_07_i_l_sensor_debugging_description_08.html">00077</a> <span class="keyword">@interface </span>NSObject (ILSensorDebuggingDescription)
-<a name="l00078"></a>00078 
-<a name="l00082"></a>00082 - (id) descriptionForDebugging;
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084 <span class="keyword">@end</span>
+<a name="l00068"></a><a class="code" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">00068</a> <span class="preprocessor">#define ILLogDict(...) do { \</span>
+<a name="l00069"></a>00069 <span class="preprocessor">        if (ILShouldLog()) \</span>
+<a name="l00070"></a>00070 <span class="preprocessor">                [ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
+<a name="l00071"></a>00071 <span class="preprocessor">        } while (0)</span>
+<a name="l00072"></a>00072 <span class="preprocessor"></span>
+<a name="l00073"></a>00073 
+<a name="l00076"></a><a class="code" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">00076</a> <span class="preprocessor">#define ILLog(x, ...) do { \</span>
+<a name="l00077"></a>00077 <span class="preprocessor">        if (ILShouldLog()) \</span>
+<a name="l00078"></a>00078 <span class="preprocessor">                [ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
+<a name="l00079"></a>00079 <span class="preprocessor">        } while (0)</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span>
+<a name="l00083"></a><a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb">00083</a> <span class="preprocessor">#define ILShouldLog() (1)</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span>
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="interface_n_s_object_07_i_l_sensor_debugging_description_08.html">00087</a> <span class="keyword">@interface </span>NSObject (ILSensorDebuggingDescription)
+<a name="l00088"></a>00088 
+<a name="l00092"></a>00092 - (id) descriptionForDebugging;
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="keyword">@end</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -100,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sat Oct 2 10:44:56 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Oct 5 20:31:11 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -65,13 +65,23 @@
 
 /** Sends a telemetry message whose content is a dictionary. You pass values and keys of the dictionary (similar to NSDictionary#dictionaryWithObjectsAndKeys:), except no nil marker is needed at the end.
  */
-#define ILLogDict(...) \
-	[ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]
+#define ILLogDict(...) do { \
+	if (ILShouldLog()) \
+		[ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \
+	} while (0)
+
 
 /** Sends a telemetry message whose content is a formatted string. This macro is a drop-in replacement for NSLog.
  */
-#define ILLog(x, ...) \
-	[ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]
+#define ILLog(x, ...) do { \
+	if (ILShouldLog()) \
+		[ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \
+	} while (0)
+
+/** This macro expands to a nonzero value if you should expend processing time in producing logging, or zero if any logging-related processing can be skipped. In some releases of this library, this value may vary at runtime.
+ */
+#define ILShouldLog() (1)
+
 
 
 @interface NSObject (ILSensorDebuggingDescription)
