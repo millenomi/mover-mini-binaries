@@ -4,6 +4,22 @@ This is a pre-alpha version of the Mover Mini library. This library allows you t
 
 Following this section are update news. Look below them for a quick start on the use of this library.
 
+# Update: Oct 11th, 2010
+
+The Labs are glad to announce the Mover Mini beta release.
+
+This release updates Mover Mini to add:
+
+ * **THIS LIBRARY IS NOT READY FOR PRODUCTION.** It will raise an exception if used past its expiration date of **October 20th, 2010** (which incidentally is when the Labs have planned to release the final version of Mover Mini). Do not deploy apps that include this library to end users.
+
+ * A business model.
+
+ * Advertising views. If the user lingers on the table view, a "Powered by Mover" banner appears in the area above the table. Tapping the banner's "Learn More" button shows an advertising view that covers the entire screen for the "Powered by Mover" program. (Currently, the URL for the Powered by Mover program page redirects to the Mover home page, but this will change in the future.) There are two new delegate methods that inform you of the state of the ad overlay to ensure your app can react to it.
+
+ * Details of the Powered by Mover program will be added in the coming weeks as part of the 1.x release line of Mover Mini. You can participate in it if you want! This will add you to the Powered by Mover ad page. For more information, [contact the Labs](http://infinite-labs.net/me). Participation in the Program will be free of charge.
+
+Yes, you need to let the ad view and banner display. In exchange, **Mover Mini is free**.
+
 # Update: Oct 5th, 2010
 
 `MvrEngine` has partial telemetry (logging) support now, and will log many (but not all) interesting events.

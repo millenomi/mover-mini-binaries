@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MvrMiniItem, L0KVODispatcher, MvrSlide, MvrEngine;
+@class MvrMiniItem, L0KVODispatcher, MvrSlide, MvrEngine, MvrAdController;
 
 /**
  This type defines the possible animation types for a MvrTable. See the MvrTable#animationStyle property for more information.
@@ -39,9 +39,7 @@ typedef enum {
  A MvrTable instance manages the 'table', the main UI provided by Mover Mini. The table appears underneath all controls in a window, in a way reminiscent of modal view controllers; the table will appear if you request it with the #show or #showByAddingItem: methods, and may also automatically appear when certain events occur (for example, an item is received). 
  */
 @interface MvrTable : NSObject {
-@private
-	UIStatusBarStyle statusBarStyle;
-	
+@private	
 	NSMutableSet* displayedSlides;
 	MvrSlide* selectedSlide;
 	
@@ -49,6 +47,10 @@ typedef enum {
 	
 	NSMutableArray* barButtonItems;
 	NSMutableArray* itemActions;
+	
+	MvrAdController* adController;
+	
+	BOOL didShowAdAtLeastOnce;
 }
 
 /**
@@ -160,5 +162,19 @@ typedef enum {
  Please note that the property might not have changed since the last time this delegate method was called.
  */
 - (void) moverTableDidChangeCanShow:(MvrTable*) table;
+
+/**
+ Called when the user has tapped the ad on the Mover Mini table to show the ad overlay. The ad overlay is displayed in a private way, which does not interfere with the contents of the window the table is attached to.
+ 
+ Since your app is entirely hidden while the window is displayed, it's recommended that you stop updating your UI or performing other intensive work while the ad is displayed; this works in a way that's similar to OS interruptions such as phone calls or SMS/calendar alerts.
+ */
+- (void) moverTableWillShowAdOverlay:(MvrTable*) table;
+
+/**
+ Called when the user has dismissed the ad overlay. You can resume UI updating in your application.
+ 
+ Note that the UI overlay and the table are independent. The table may hide itself while the overlay is displaying, and this will not hide the overlay. The user can hide the overlay using UI inside the overlay itself.
+ */
+- (void) moverTableDidHideAdOverlay:(MvrTable*) table;
 
 @end

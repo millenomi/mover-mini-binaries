@@ -59,6 +59,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the table is about to be hidden.  <a href="#a18c0f990244da15effce000b419dde9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mvr_table_delegate-p.html#a493fad3a3e97df110a561c51cb60a40f">moverTableDidChangeCanShow:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the screen configuration has changed and the table has potentially changed its <a class="el" href="interface_mvr_table.html#a104274a20cdcbbf2a665abfd2cc2ceaa" title="Returns YES if the table can be displayed in this configuration, or NO otherwise...">MvrTable::canShowTable</a> property.  <a href="#a493fad3a3e97df110a561c51cb60a40f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mvr_table_delegate-p.html#a6d820e5fcdfd604dfc5a6d7f49ceda39">moverTableWillShowAdOverlay:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the user has tapped the ad on the Mover Mini table to show the ad overlay.  <a href="#a6d820e5fcdfd604dfc5a6d7f49ceda39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mvr_table_delegate-p.html#a7c801a63187ca93fad77a2c3964b5877">moverTableDidHideAdOverlay:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Called when the user has dismissed the ad overlay.  <a href="#a7c801a63187ca93fad77a2c3964b5877"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>A table delegate will be informed of events coming from a <a class="el" href="interface_mvr_table.html" title="A MvrTable instance manages the &#39;table&#39;, the main UI provided by Mover Mini...">MvrTable</a> instance. </p>
@@ -143,6 +147,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a7c801a63187ca93fad77a2c3964b5877"></a><!-- doxytag: member="MvrTableDelegate&#45;p::moverTableDidHideAdOverlay:" ref="a7c801a63187ca93fad77a2c3964b5877" args="(MvrTable *table)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) moverTableDidHideAdOverlay: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_mvr_table.html">MvrTable</a> *)&nbsp;</td>
+          <td class="paramname"> <em>table</em></td>
+          <td>&nbsp;</td>
+          <td><code> [optional]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the user has dismissed the ad overlay. </p>
+<p>You can resume UI updating in your application.</p>
+<p>Note that the UI overlay and the table are independent. The table may hide itself while the overlay is displaying, and this will not hide the overlay. The user can hide the overlay using UI inside the overlay itself. </p>
+
+</div>
+</div>
 <a class="anchor" id="a57d8d3f373fff04781c4abf2cf1f0039"></a><!-- doxytag: member="MvrTableDelegate&#45;p::moverTableWillShow:" ref="a57d8d3f373fff04781c4abf2cf1f0039" args="(MvrTable *table)" -->
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +186,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Called when the table is about to be shown onscreen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6d820e5fcdfd604dfc5a6d7f49ceda39"></a><!-- doxytag: member="MvrTableDelegate&#45;p::moverTableWillShowAdOverlay:" ref="a6d820e5fcdfd604dfc5a6d7f49ceda39" args="(MvrTable *table)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) moverTableWillShowAdOverlay: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_mvr_table.html">MvrTable</a> *)&nbsp;</td>
+          <td class="paramname"> <em>table</em></td>
+          <td>&nbsp;</td>
+          <td><code> [optional]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the user has tapped the ad on the Mover Mini table to show the ad overlay. </p>
+<p>The ad overlay is displayed in a private way, which does not interfere with the contents of the window the table is attached to.</p>
+<p>Since your app is entirely hidden while the window is displayed, it's recommended that you stop updating your UI or performing other intensive work while the ad is displayed; this works in a way that's similar to OS interruptions such as phone calls or SMS/calendar alerts. </p>
 
 </div>
 </div>
@@ -181,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Oct 5 20:31:11 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:09 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
