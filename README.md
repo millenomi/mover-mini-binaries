@@ -4,6 +4,22 @@ This is a pre-alpha version of the Mover Mini library. This library allows you t
 
 Following this section are update news. Look below them for a quick start on the use of this library.
 
+# Update: 1.0 (Oct 20th, 2010)
+
+The Labs are glad to announce Mover Mini 1.0.
+
+This release includes the following changes from the Mover Mini beta:
+
+ * Now includes Mover Core 3.6, which includes:
+	
+	* Better memory management when dealing with many items in low memory conditions.
+	
+	* Fixed a bug where the same destination could be reported more than once.
+	
+ * The Telemetry sensor sink can now have multiple taps, and can be turned on or off. It is off by default.
+
+ * Verbose logging from the Core has been removed (a Release build is used instead of a Debug one). You can still receive logging from Telemetry-enabled portions of the code (Mover Mini) by turning on the sensor sink or attaching a tap to it, but such logging is now disabled by default.
+
 # Update: Oct 11th, 2010
 
 The Labs are glad to announce the Mover Mini beta release.

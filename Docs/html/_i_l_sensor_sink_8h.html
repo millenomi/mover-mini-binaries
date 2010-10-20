@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/ILSensorSink.h File Reference</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/ILSensorSink.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,7 +43,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/ILSensorSink.h File Reference</h1>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/ILSensorSink.h File Reference</h1>
 <p><a href="_i_l_sensor_sink_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Classes</h2></td></tr>
@@ -57,8 +57,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a telemetry message whose content is a dictionary.  <a href="#a975c1254a754e37688f87efd41c33ec2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">ILLog</a>(x,...)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a telemetry message whose content is a formatted string.  <a href="#a34bddbbd28e2b4f69e1a0f2bb0a35d3d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb">ILShouldLog</a>()&nbsp;&nbsp;&nbsp;(1)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This macro expands to a nonzero value if you should expend processing time in producing logging, or zero if any logging-related processing can be skipped.  <a href="#ab43c867ebd7eb0fb1ad1ae5cc01fabcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb">ILShouldLog</a>()&nbsp;&nbsp;&nbsp;([[<a class="el" href="interface_i_l_sensor_sink.html">ILSensorSink</a> sharedSink] isEnabled])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This macro's expansion evaluates (at runtime) to YES if you should expend processing time in producing logging, or NO if any logging-related processing can be skipped.  <a href="#ab43c867ebd7eb0fb1ad1ae5cc01fabcb"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a34bddbbd28e2b4f69e1a0f2bb0a35d3d"></a><!-- doxytag: member="ILSensorSink.h::ILLog" ref="a34bddbbd28e2b4f69e1a0f2bb0a35d3d" args="(x,...)" -->
@@ -82,8 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">do</span> { \
-        <span class="keywordflow">if</span> (<a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb" title="This macro expands to a nonzero value if you should expend processing time in producing...">ILShouldLog</a>()) \
-                [<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a> <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">log</a>:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">atLine</a>:__LINE__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">function</a>:__PRETTY_FUNCTION__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">object</a>:(self) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">channel</a>:(nil)]; \
+        <span class="keywordflow">if</span> (<a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb" title="This macro&amp;#39;s expansion evaluates (at runtime) to YES if you should expend processing...">ILShouldLog</a>()) \
+                [<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a> <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">log</a>:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">atLine</a>:__LINE__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">function</a>:__PRETTY_FUNCTION__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">object</a>:(self) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">channel</a>:(nil)]; \
         } <span class="keywordflow">while</span> (0)
 </pre></div>
 <p>Sends a telemetry message whose content is a formatted string. </p>
@@ -107,8 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">do</span> { \
-        <span class="keywordflow">if</span> (<a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb" title="This macro expands to a nonzero value if you should expend processing time in producing...">ILShouldLog</a>()) \
-                [<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a> <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">log</a>:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">atLine</a>:__LINE__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">function</a>:__PRETTY_FUNCTION__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">object</a>:(self) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb" title="This method is part of the implementation of ILLog and ILLogDict and should not be...">channel</a>:(nil)]; \
+        <span class="keywordflow">if</span> (<a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb" title="This macro&amp;#39;s expansion evaluates (at runtime) to YES if you should expend processing...">ILShouldLog</a>()) \
+                [<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a> <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">log</a>:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">atLine</a>:__LINE__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">function</a>:__PRETTY_FUNCTION__ <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">object</a>:(self) <a class="code" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">channel</a>:(nil)]; \
         } <span class="keywordflow">while</span> (0)
 </pre></div>
 <p>Sends a telemetry message whose content is a dictionary. </p>
@@ -126,14 +126,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &nbsp;</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td>&nbsp;&nbsp;&nbsp;(1)</td>
+          <td>&nbsp;&nbsp;&nbsp;([[<a class="el" href="interface_i_l_sensor_sink.html">ILSensorSink</a> sharedSink] isEnabled])</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>This macro expands to a nonzero value if you should expend processing time in producing logging, or zero if any logging-related processing can be skipped. </p>
-<p>In some releases of this library, this value may vary at runtime. </p>
+<p>This macro's expansion evaluates (at runtime) to YES if you should expend processing time in producing logging, or NO if any logging-related processing can be skipped. </p>
+<p>If you may incur an overhead doing logging-related work, you should skip that work if this macro ultimately evaluates to NO. </p>
 
 </div>
 </div>
@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/ILSensorSink.h Source File</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/ILSensorSink.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -41,7 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/ILSensorSink.h</h1><a href="_i_l_sensor_sink_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/ILSensorSink.h</h1><a href="_i_l_sensor_sink_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  ILSensorSink.h</span>
 <a name="l00003"></a>00003 <span class="comment">//  TheLongMix</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -55,7 +55,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00016"></a><a class="code" href="protocol_i_l_sensor_sink_tap-p.html">00016</a> <span class="keyword">@protocol </span>ILSensorSinkTap &lt;NSObject&gt;
 <a name="l00017"></a>00017 
-<a name="l00027"></a>00027 - (BOOL) sensorSink:(<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a>*) s didReceiveMessageOnChannels:(NSSet*) channels withContent:(<span class="keywordtype">id</span>) content;
+<a name="l00027"></a>00027 - (BOOL) sensorSink:(<a class="code" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a>*) s shouldProcessReceivedMessage:(<span class="keywordtype">id</span>) messageContent postedOnChannels:(NSSet*) channels;
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="keyword">@end</span>
 <a name="l00030"></a>00030 
@@ -63,36 +63,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00037"></a>00037 + sharedSink;
 <a name="l00038"></a>00038 
-<a name="l00045"></a>00045 - (<a class="code" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be" title="The block that implements the behavior of a MvrMiniItemAction created with initWithTitle:replaceForm...">void</a>) logMessageWithContent:(<span class="keywordtype">id</span>) content forChannels:(NSSet*) channels;
+<a name="l00045"></a>00045 - (<a class="code" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be" title="The block that implements the behavior of a MvrMiniItemAction created with initWithTitle:replaceForm...">void</a>) logMessageWithContent:(<span class="keywordtype">id</span>) content onChannels:(NSSet*) channels;
 <a name="l00046"></a>00046 
 <a name="l00051"></a>00051 + (<a class="code" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be" title="The block that implements the behavior of a MvrMiniItemAction created with initWithTitle:replaceForm...">void</a>) log:(<span class="keywordtype">id</span>) content atLine:(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>) line function:(const <span class="keywordtype">char</span>*) functionName object:(<span class="keywordtype">id</span>) object channel:(NSString*) channel;
 <a name="l00052"></a>00052 
 <a name="l00057"></a>00057 + (id) transferableObjectForObject:(<span class="keywordtype">id</span>) object;
 <a name="l00058"></a>00058 
-<a name="l00062"></a><a class="code" href="interface_i_l_sensor_sink.html#ab75a8ed8a9096e46a1ff2cfe662d0deb">00062</a> @property(retain, nonatomic) id &lt;ILSensorSinkTap&gt; tap;
+<a name="l00062"></a>00062 - (<a class="code" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be" title="The block that implements the behavior of a MvrMiniItemAction created with initWithTitle:replaceForm...">void</a>) addTap:(<span class="keywordtype">id</span> &lt;ILSensorSinkTap&gt;) tap;
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064 @end
-<a name="l00065"></a>00065 
-<a name="l00068"></a><a class="code" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">00068</a> <span class="preprocessor">#define ILLogDict(...) do { \</span>
-<a name="l00069"></a>00069 <span class="preprocessor">        if (ILShouldLog()) \</span>
-<a name="l00070"></a>00070 <span class="preprocessor">                [ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
-<a name="l00071"></a>00071 <span class="preprocessor">        } while (0)</span>
-<a name="l00072"></a>00072 <span class="preprocessor"></span>
-<a name="l00073"></a>00073 
-<a name="l00076"></a><a class="code" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">00076</a> <span class="preprocessor">#define ILLog(x, ...) do { \</span>
-<a name="l00077"></a>00077 <span class="preprocessor">        if (ILShouldLog()) \</span>
-<a name="l00078"></a>00078 <span class="preprocessor">                [ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
-<a name="l00079"></a>00079 <span class="preprocessor">        } while (0)</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span>
-<a name="l00083"></a><a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb">00083</a> <span class="preprocessor">#define ILShouldLog() (1)</span>
+<a name="l00067"></a>00067 - (<a class="code" href="_mvr_mini_item_action_8h.html#affd38961b074d34617a5bd59718231be" title="The block that implements the behavior of a MvrMiniItemAction created with initWithTitle:replaceForm...">void</a>) removeTap:(<span class="keywordtype">id</span> &lt;ILSensorSinkTap&gt;) tap;
+<a name="l00068"></a>00068 
+<a name="l00074"></a><a class="code" href="interface_i_l_sensor_sink.html#ab97ce9f308ce94edbae915f32beade19">00074</a> @property(nonatomic, assign, getter=isEnabled) BOOL enabled;
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 @end
+<a name="l00077"></a>00077 
+<a name="l00080"></a><a class="code" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">00080</a> <span class="preprocessor">#define ILLogDict(...) do { \</span>
+<a name="l00081"></a>00081 <span class="preprocessor">        if (ILShouldLog()) \</span>
+<a name="l00082"></a>00082 <span class="preprocessor">                [ILSensorSink log:([NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
+<a name="l00083"></a>00083 <span class="preprocessor">        } while (0)</span>
 <a name="l00084"></a>00084 <span class="preprocessor"></span>
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="interface_n_s_object_07_i_l_sensor_debugging_description_08.html">00087</a> <span class="keyword">@interface </span>NSObject (ILSensorDebuggingDescription)
-<a name="l00088"></a>00088 
-<a name="l00092"></a>00092 - (id) descriptionForDebugging;
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094 <span class="keyword">@end</span>
+<a name="l00088"></a><a class="code" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">00088</a> <span class="preprocessor">#define ILLog(x, ...) do { \</span>
+<a name="l00089"></a>00089 <span class="preprocessor">        if (ILShouldLog()) \</span>
+<a name="l00090"></a>00090 <span class="preprocessor">                [ILSensorSink log:([NSString stringWithFormat:(x) , ## __VA_ARGS__]) atLine:__LINE__ function:__PRETTY_FUNCTION__ object:(self) channel:(nil)]; \</span>
+<a name="l00091"></a>00091 <span class="preprocessor">        } while (0)</span>
+<a name="l00092"></a>00092 <span class="preprocessor"></span>
+<a name="l00095"></a><a class="code" href="_i_l_sensor_sink_8h.html#ab43c867ebd7eb0fb1ad1ae5cc01fabcb">00095</a> <span class="preprocessor">#define ILShouldLog() ([[ILSensorSink sharedSink] isEnabled])</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 
+<a name="l00099"></a><a class="code" href="interface_n_s_object_07_i_l_sensor_debugging_description_08.html">00099</a> <span class="keyword">@interface </span>NSObject (ILSensorDebuggingDescription)
+<a name="l00100"></a>00100 
+<a name="l00104"></a>00104 - (id) descriptionForDebugging;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="keyword">@end</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -108,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

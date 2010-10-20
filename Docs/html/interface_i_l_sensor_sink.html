@@ -51,23 +51,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="class_i_l_sensor_sink-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_i_l_sensor_sink.html#ae2aac61d7c8941435889c8efd1b40115">logMessageWithContent:forChannels:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a telemetry message.  <a href="#ae2aac61d7c8941435889c8efd1b40115"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_i_l_sensor_sink.html#a3f14609a905fe7243233852256ac2564">logMessageWithContent:onChannels:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a telemetry message.  <a href="#a3f14609a905fe7243233852256ac2564"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_i_l_sensor_sink.html#a70200a817e8a61ef2090f435867d3785">addTap:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a sensor tap to the set of sensor taps for this sink.  <a href="#a70200a817e8a61ef2090f435867d3785"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_i_l_sensor_sink.html#a60c05f648b1a5c670a46bb9598f01ff3">removeTap:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes a sensor tap from the set of sensor taps for this sink, if it was in that set.  <a href="#a60c05f648b1a5c670a46bb9598f01ff3"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_l_sensor_sink.html#a7eb10b9fd57626b256cfbeecd21d0e2b">sharedSink</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the shared sensor sink instance.  <a href="#a7eb10b9fd57626b256cfbeecd21d0e2b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">log:atLine:function:object:channel:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This method is part of the implementation of <a class="el" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">ILLog</a> and <a class="el" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">ILLogDict</a> and should not be called directly.  <a href="#a5857f71808ebdfc2ec05c2c2303917eb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_l_sensor_sink.html#a42d00f8989e2a185e129a80df85b6b0d">transferableObjectForObject:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This method is part of the implementation of telemetry internals and should not be called directly.  <a href="#a42d00f8989e2a185e129a80df85b6b0d"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Properties</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_i_l_sensor_sink_tap-p.html">ILSensorSinkTap</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_l_sensor_sink.html#ab75a8ed8a9096e46a1ff2cfe662d0deb">tap</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets or retrieves the sensor tap for this sink.  <a href="#ab75a8ed8a9096e46a1ff2cfe662d0deb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_l_sensor_sink.html#ab97ce9f308ce94edbae915f32beade19">enabled</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Indicates whether sending messages to the sink has any useful effect.  <a href="#ab97ce9f308ce94edbae915f32beade19"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Debug only: A sensor sink is the ultimate destination of all messages produced by telemetry-enabled classes. </p>
-<p>You can send messages to a sink manually, through utility macros (such as <a class="el" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">ILLog</a> and <a class="el" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">ILLogDict</a>), or handle logging messages yourself by setting a tap for this sensor sink (using the <a class="el" href="interface_i_l_sensor_sink.html#ab75a8ed8a9096e46a1ff2cfe662d0deb" title="Sets or retrieves the sensor tap for this sink.">tap</a> property). </p>
+<p>You can send messages to a sink manually, through utility macros (such as <a class="el" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">ILLog</a> and <a class="el" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">ILLogDict</a>), or handle logging messages yourself by setting a tap for this sensor sink (using the tap property). </p>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a70200a817e8a61ef2090f435867d3785"></a><!-- doxytag: member="ILSensorSink::addTap:" ref="a70200a817e8a61ef2090f435867d3785" args="(id&lt; ILSensorSinkTap &gt; tap)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addTap: </td>
+          <td></td>
+          <td class="paramtype">(id&lt; <a class="el" href="protocol_i_l_sensor_sink_tap-p.html">ILSensorSinkTap</a> &gt;)&nbsp;</td>
+          <td class="paramname"> <em>tap</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a sensor tap to the set of sensor taps for this sink. </p>
+<p>If the tap was already added to the set, nothing will happen. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5857f71808ebdfc2ec05c2c2303917eb"></a><!-- doxytag: member="ILSensorSink::log:atLine:function:object:channel:" ref="a5857f71808ebdfc2ec05c2c2303917eb" args="(id content,[atLine] unsigned long long line,[function] const char *functionName,[object] id object,[channel] NSString *channel)" -->
 <div class="memitem">
 <div class="memproto">
@@ -111,11 +134,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>This method is part of the implementation of <a class="el" href="_i_l_sensor_sink_8h.html#a34bddbbd28e2b4f69e1a0f2bb0a35d3d">ILLog</a> and <a class="el" href="_i_l_sensor_sink_8h.html#a975c1254a754e37688f87efd41c33ec2">ILLogDict</a> and should not be called directly. </p>
-
 </div>
 </div>
-<a class="anchor" id="ae2aac61d7c8941435889c8efd1b40115"></a><!-- doxytag: member="ILSensorSink::logMessageWithContent:forChannels:" ref="ae2aac61d7c8941435889c8efd1b40115" args="(id content,[forChannels] NSSet *channels)" -->
+<a class="anchor" id="a3f14609a905fe7243233852256ac2564"></a><!-- doxytag: member="ILSensorSink::logMessageWithContent:onChannels:" ref="a3f14609a905fe7243233852256ac2564" args="(id content,[onChannels] NSSet *channels)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -126,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <td class="paramname"> <em>content</em></td>
         </tr>
         <tr>
-          <td class="paramkey">forChannels:</td>
+          <td class="paramkey">onChannels:</td>
           <td></td>
           <td class="paramtype">(NSSet *)&nbsp;</td>
           <td class="paramname"> <em>channels</em></td><td>&nbsp;</td>
@@ -148,6 +169,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a60c05f648b1a5c670a46bb9598f01ff3"></a><!-- doxytag: member="ILSensorSink::removeTap:" ref="a60c05f648b1a5c670a46bb9598f01ff3" args="(id&lt; ILSensorSinkTap &gt; tap)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) removeTap: </td>
+          <td></td>
+          <td class="paramtype">(id&lt; <a class="el" href="protocol_i_l_sensor_sink_tap-p.html">ILSensorSinkTap</a> &gt;)&nbsp;</td>
+          <td class="paramname"> <em>tap</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Removes a sensor tap from the set of sensor taps for this sink, if it was in that set. </p>
 
 </div>
 </div>
@@ -186,29 +227,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>This method is part of the implementation of telemetry internals and should not be called directly. </p>
-
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
-<a class="anchor" id="ab75a8ed8a9096e46a1ff2cfe662d0deb"></a><!-- doxytag: member="ILSensorSink::tap" ref="ab75a8ed8a9096e46a1ff2cfe662d0deb" args="" -->
+<a class="anchor" id="ab97ce9f308ce94edbae915f32beade19"></a><!-- doxytag: member="ILSensorSink::enabled" ref="ab97ce9f308ce94edbae915f32beade19" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (id&lt;<a class="el" href="protocol_i_l_sensor_sink_tap-p.html">ILSensorSinkTap</a>&gt;) tap<code> [read, write, retain]</code></td>
+          <td class="memname">- (BOOL) enabled<code> [read, write, assign]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Sets or retrieves the sensor tap for this sink. </p>
-<p>If non-nil, the tap will receive all messages before </p>
+<p>Indicates whether sending messages to the sink has any useful effect. </p>
+<p>If NO, you should avoid logging-related overhead.</p>
+<p>This property can be set by the application at leisure. The default is NO. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/<a class="el" href="_i_l_sensor_sink_8h_source.html">ILSensorSink.h</a></li>
+<li>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/<a class="el" href="_i_l_sensor_sink_8h_source.html">ILSensorSink.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -225,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

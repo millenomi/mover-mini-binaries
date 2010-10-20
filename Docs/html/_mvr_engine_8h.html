@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrEngine.h File Reference</title>
+<title>Mover Mini: /Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/MvrEngine.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -43,12 +43,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/MvrEngine.h File Reference</h1>
+<h1>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/MvrEngine.h File Reference</h1>
 <p><a href="_mvr_engine_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mvr_engine.html">MvrEngine</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The engine coordinates Mover Mini activities, runs the Core so that discovery and transfers can happen, and produces endpoint (<a class="el" href="protocol_mvr_endpoint-p.html">MvrEndpoint</a>) and item (<a class="el" href="interface_mvr_mini_item.html">MvrMiniItem</a>) objects for you.  <a href="interface_mvr_engine.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2>Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_engine_8h.html#ac6a59eb0bdb30a05122617817b619ec5">MvrMiniLocalizedString</a>(key, comment)&nbsp;&nbsp;&nbsp;[[<a class="el" href="interface_mvr_engine.html">MvrEngine</a> moverMiniResourcesBundle] localizedStringForKey:(key) value:@&quot;&quot; table:nil]</td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_engine_8h.html#a329e8f7c3d7d1aa581cad530286354d6">kMvrEngineWillStopNotification</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This notification is posted whenever the engine stops (as per the <a class="el" href="interface_mvr_engine.html#a91b75ce8834c172c29e59699ff1f6341" title="Stops the engine.">stop (MvrEngine)</a> method).  <a href="#a329e8f7c3d7d1aa581cad530286354d6"></a><br/></td></tr>
@@ -75,6 +77,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mvr_engine_8h.html#a579833d74880b3094e5344ecd4462689">kMvrEngineOutgoingKey</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The object for this key in a <a class="el" href="_mvr_engine_8h.html#ae0977cfb16d847172ef488ba80013f8f">kMvrEngineDidStartSendingNotification</a> or <a class="el" href="_mvr_engine_8h.html#af7ebd7a4275832079dffe8a026abfac7">kMvrEngineDidFinishReceivingNotification</a> is a <a class="el" href="protocol_mvr_mini_outgoing-p.html" title="Represents an outgoing transfer in progress.">MvrMiniOutgoing</a> object describing an outgoing transfer.  <a href="#a579833d74880b3094e5344ecd4462689"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ac6a59eb0bdb30a05122617817b619ec5"></a><!-- doxytag: member="MvrEngine.h::MvrMiniLocalizedString" ref="ac6a59eb0bdb30a05122617817b619ec5" args="(key, comment)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MvrMiniLocalizedString</td>
+          <td>(</td>
+          <td class="paramtype">key, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">comment&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;[[<a class="el" href="interface_mvr_engine.html">MvrEngine</a> moverMiniResourcesBundle] localizedStringForKey:(key) value:@&quot;&quot; table:nil]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Variable Documentation</h2>
 <a class="anchor" id="abec2d08293a0e433ce0cee9d345899d4"></a><!-- doxytag: member="MvrEngine.h::kMvrEngineDidFindEndpointNotification" ref="abec2d08293a0e433ce0cee9d345899d4" args="" -->
 <div class="memitem">
@@ -282,7 +308,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

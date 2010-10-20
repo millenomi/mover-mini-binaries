@@ -51,14 +51,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="protocol_i_l_sensor_sink_tap-p-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_i_l_sensor_sink_tap-p.html#a9e9a6d2c3f813ea21d18a945060911c9">sensorSink:didReceiveMessageOnChannels:withContent:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles a message coming from the sensor sink.  <a href="#a9e9a6d2c3f813ea21d18a945060911c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_i_l_sensor_sink_tap-p.html#aeb61a48ba6d003017104404ad94a00e9">sensorSink:shouldProcessReceivedMessage:postedOnChannels:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Handles a message coming from the sensor sink.  <a href="#aeb61a48ba6d003017104404ad94a00e9"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Debug only: A sensor sink tap can receive all logging messages that are sent to a <a class="el" href="interface_i_l_sensor_sink.html" title="Debug only: A sensor sink is the ultimate destination of all messages produced by...">ILSensorSink</a>. </p>
 <p>You can create a sink tap to perform special handling of logging messages and to prevent them from being displayed on the standard sink output. </p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a9e9a6d2c3f813ea21d18a945060911c9"></a><!-- doxytag: member="ILSensorSinkTap&#45;p::sensorSink:didReceiveMessageOnChannels:withContent:" ref="a9e9a6d2c3f813ea21d18a945060911c9" args="(ILSensorSink *s,[didReceiveMessageOnChannels] NSSet *channels,[withContent] id content)" -->
+<a class="anchor" id="aeb61a48ba6d003017104404ad94a00e9"></a><!-- doxytag: member="ILSensorSinkTap&#45;p::sensorSink:shouldProcessReceivedMessage:postedOnChannels:" ref="aeb61a48ba6d003017104404ad94a00e9" args="(ILSensorSink *s,[shouldProcessReceivedMessage] id messageContent,[postedOnChannels] NSSet *channels)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -69,16 +69,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <td class="paramname"> <em>s</em></td>
         </tr>
         <tr>
-          <td class="paramkey">didReceiveMessageOnChannels:</td>
-          <td></td>
-          <td class="paramtype">(NSSet *)&nbsp;</td>
-          <td class="paramname"> <em>channels</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">withContent:</td>
+          <td class="paramkey">shouldProcessReceivedMessage:</td>
           <td></td>
           <td class="paramtype">(id)&nbsp;</td>
-          <td class="paramname"> <em>content</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>messageContent</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">postedOnChannels:</td>
+          <td></td>
+          <td class="paramtype">(NSSet *)&nbsp;</td>
+          <td class="paramname"> <em>channels</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -90,20 +90,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 
 <p>Handles a message coming from the sensor sink. </p>
+<p>The return value will be used to determine if the message should be further processed by the sink or not. (Regardless of what you return, all taps will receive the message.)</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>The sensor sink this message was sent to. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>channels</em>&nbsp;</td><td>A set of strings, the channels this message was sent to. (For more information, see <a class="el" href="interface_i_l_sensor_sink.html#ae2aac61d7c8941435889c8efd1b40115" title="Sends a telemetry message.">logMessageWithContent:forChannels: (ILSensorSink)</a>.) </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>content</em>&nbsp;</td><td>A JSON-like fragment, consisting of either a NSString, NSNumber, NSNull object, NSArray or NSDictionary. NSArrays will only contain objects of the aforementioned classes, whereas NSDictionaries will only contain objects of the aforementioned classes as values and NSStrings as keys.</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>messageContent</em>&nbsp;</td><td>A JSON-like fragment, consisting of either a NSString, NSNumber, NSNull object, NSArray or NSDictionary. NSArrays will only contain objects of the aforementioned classes, whereas NSDictionaries will only contain objects of the aforementioned classes as values and NSStrings as keys. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>channels</em>&nbsp;</td><td>A set of strings, the channels this message was sent to. (For more information, see ILSensorSink::logMessageWithContent:forChannels:.)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>YES if you want to allow the sensor sink to further handle the message; NO if you have fully handled it. (In this version of Telemetry, the sensor sink's handling of a message prints a summary of that message to the console via NSLog.) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>YES if you want to allow the sensor sink to further handle the message; NO if you have fully handled it. (In this version of Telemetry, the sensor sink's handling of a message prints a summary of that message to the console via NSLog.) If multiple taps are attached to a sink, any of them returning NO will prevent the message from being processed by the sink. Note that regardless of return value, all taps attached to a sink will receive the message; only further processing by the sink is prevented. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this protocol was generated from the following file:<ul>
-<li>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Debug-iphoneos/Headers/MoverMini/<a class="el" href="_i_l_sensor_sink_8h_source.html">ILSensorSink.h</a></li>
+<li>/Users/millenomi/Developer/Paraverse/Worktable/MoverMini/build/Release-iphoneos/Headers/MoverMini/<a class="el" href="_i_l_sensor_sink_8h_source.html">ILSensorSink.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -120,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

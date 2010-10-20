@@ -96,6 +96,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>addKnownItem:
 : <a class="el" href="interface_mvr_engine.html#a81333018f2af282316df5bbabf0cf63d">MvrEngine</a>
 </li>
+<li>addTap:
+: <a class="el" href="interface_i_l_sensor_sink.html#a70200a817e8a61ef2090f435867d3785">ILSensorSink</a>
+</li>
 <li>allDisplayers
 : <a class="el" href="interface_mvr_mini_item_displayer.html#a383c7662f16ac1b54e20df6c393dacea">MvrMiniItemDisplayer</a>
 </li>
@@ -149,7 +152,8 @@ Here is a list of all class members with links to the classes they belong to:
 
 <h3><a class="anchor" id="index_e">- e -</a></h3><ul>
 <li>enabled
-: <a class="el" href="interface_mvr_mini_item_action.html#a21d93f60094d0b2b297f5b739d52f6ac">MvrMiniItemAction</a>
+: <a class="el" href="interface_i_l_sensor_sink.html#ab97ce9f308ce94edbae915f32beade19">ILSensorSink</a>
+, <a class="el" href="interface_mvr_mini_item_action.html#a21d93f60094d0b2b297f5b739d52f6ac">MvrMiniItemAction</a>
 </li>
 <li>engine
 : <a class="el" href="interface_mvr_table.html#aa804a2604cebb367a3875dc09d8f0fb8">MvrTable</a>
@@ -209,8 +213,8 @@ Here is a list of all class members with links to the classes they belong to:
 <li>log:atLine:function:object:channel:
 : <a class="el" href="interface_i_l_sensor_sink.html#a5857f71808ebdfc2ec05c2c2303917eb">ILSensorSink</a>
 </li>
-<li>logMessageWithContent:forChannels:
-: <a class="el" href="interface_i_l_sensor_sink.html#ae2aac61d7c8941435889c8efd1b40115">ILSensorSink</a>
+<li>logMessageWithContent:onChannels:
+: <a class="el" href="interface_i_l_sensor_sink.html#a3f14609a905fe7243233852256ac2564">ILSensorSink</a>
 </li>
 </ul>
 
@@ -274,6 +278,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>removeDisplayer:
 : <a class="el" href="interface_mvr_mini_item_displayer.html#a6170a50e0f48d8b0ad49b8df54c80b98">MvrMiniItemDisplayer</a>
 </li>
+<li>removeTap:
+: <a class="el" href="interface_i_l_sensor_sink.html#a60c05f648b1a5c670a46bb9598f01ff3">ILSensorSink</a>
+</li>
 <li>replaceFormatSpecifiersInTitle
 : <a class="el" href="interface_mvr_mini_item_action.html#abe4b269b5ae656f31541827a804ff68b">MvrMiniItemAction</a>
 </li>
@@ -284,8 +291,8 @@ Here is a list of all class members with links to the classes they belong to:
 
 
 <h3><a class="anchor" id="index_s">- s -</a></h3><ul>
-<li>sensorSink:didReceiveMessageOnChannels:withContent:
-: <a class="el" href="protocol_i_l_sensor_sink_tap-p.html#a9e9a6d2c3f813ea21d18a945060911c9">&lt;ILSensorSinkTap&gt;</a>
+<li>sensorSink:shouldProcessReceivedMessage:postedOnChannels:
+: <a class="el" href="protocol_i_l_sensor_sink_tap-p.html#aeb61a48ba6d003017104404ad94a00e9">&lt;ILSensorSinkTap&gt;</a>
 </li>
 <li>sharedSink
 : <a class="el" href="interface_i_l_sensor_sink.html#a7eb10b9fd57626b256cfbeecd21d0e2b">ILSensorSink</a>
@@ -309,9 +316,6 @@ Here is a list of all class members with links to the classes they belong to:
 
 
 <h3><a class="anchor" id="index_t">- t -</a></h3><ul>
-<li>tap
-: <a class="el" href="interface_i_l_sensor_sink.html#ab75a8ed8a9096e46a1ff2cfe662d0deb">ILSensorSink</a>
-</li>
 <li>target
 : <a class="el" href="interface_mvr_mini_item_action.html#a8744a413cb8a3158921685736ec4829b">MvrMiniItemAction</a>
 </li>
@@ -319,19 +323,19 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="interface_mvr_mini_item.html#aea9d0ab31d40e7389816f56a7c0b4ca2">MvrMiniItem</a>
 </li>
 <li>title
-: <a class="el" href="interface_mvr_mini_item.html#a1211832d55275e4512a7ac7ecacf9d59">MvrMiniItem</a>
-, <a class="el" href="interface_mvr_mini_item_action.html#a308204e99f6bdeff5f637b0bbcf6abda">MvrMiniItemAction</a>
+: <a class="el" href="interface_mvr_mini_item_action.html#a308204e99f6bdeff5f637b0bbcf6abda">MvrMiniItemAction</a>
+, <a class="el" href="interface_mvr_mini_item.html#a1211832d55275e4512a7ac7ecacf9d59">MvrMiniItem</a>
 </li>
 <li>titleForItem:
-: <a class="el" href="interface_mvr_mini_item_displayer.html#ab302645c257f33b7046a22dd99f5c081">MvrMiniItemDisplayer</a>
-, <a class="el" href="interface_mvr_mini_item_action.html#a028e1c7f8055dfaaa03832e4ab2f6580">MvrMiniItemAction</a>
+: <a class="el" href="interface_mvr_mini_item_action.html#a028e1c7f8055dfaaa03832e4ab2f6580">MvrMiniItemAction</a>
+, <a class="el" href="interface_mvr_mini_item_displayer.html#ab302645c257f33b7046a22dd99f5c081">MvrMiniItemDisplayer</a>
 </li>
 <li>transferableObjectForObject:
 : <a class="el" href="interface_i_l_sensor_sink.html#a42d00f8989e2a185e129a80df85b6b0d">ILSensorSink</a>
 </li>
 <li>type
-: <a class="el" href="protocol_mvr_mini_incoming-p.html#a8d33061718a99dc20ac58d89834a08aa">&lt;MvrMiniIncoming&gt;</a>
-, <a class="el" href="interface_mvr_mini_item.html#af9522715ef6818fab39be0386ec84e33">MvrMiniItem</a>
+: <a class="el" href="interface_mvr_mini_item.html#af9522715ef6818fab39be0386ec84e33">MvrMiniItem</a>
+, <a class="el" href="protocol_mvr_mini_incoming-p.html#a8d33061718a99dc20ac58d89834a08aa">&lt;MvrMiniIncoming&gt;</a>
 </li>
 </ul>
 
@@ -363,7 +367,7 @@ Here is a list of all class members with links to the classes they belong to:
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Oct 11 11:44:08 2010 for Mover Mini by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 20 22:15:55 2010 for Mover Mini by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
