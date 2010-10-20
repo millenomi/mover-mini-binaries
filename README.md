@@ -1,6 +1,6 @@
 # Mover Mini Pre-alpha
 
-This is a pre-alpha version of the Mover Mini library. This library allows you to add some of the features of the [Mover application](http://infinite-labs.net/mover/) to your own app, allowing it to share and receive from other devices at the swipe of a finger.
+This repository contains the Mover Mini library. This library allows you to add some of the features of the [Mover application](http://infinite-labs.net/mover/) to your own app, allowing it to share and receive from other devices at the swipe of a finger. For more information, see [the Mover Mini website](http://infinite-labs.net/mover/mini/).
 
 Following this section are update news. Look below them for a quick start on the use of this library.
 
